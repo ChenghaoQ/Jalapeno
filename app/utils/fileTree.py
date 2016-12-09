@@ -1,19 +1,4 @@
-from app import app
-from flask import Blueprint,url_for
-asset = Blueprint("asset", __name__, template_folder='templates')
 import os
-import pickle
-current_path= os.getcwd()+'/app/static'
-
-
-
-@app.context_processor
-def utility_processor():
-        asset_mgr=Mgr(current_path)
-
-        return dict(asset=asset_mgr.tree(asset_mgr.tree_dict()))
-
-
 class Mgr(object):
 
         def __init__(self,path):
