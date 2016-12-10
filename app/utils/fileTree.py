@@ -52,7 +52,8 @@ class Mgr(object):
                         if isinstance(v,dict):
                                 self.url_builder(v)
                         else:
-                                print('url_for(%s,filename=%s)'%('static',v))
+                                print('url_for("%s",filename="%s")'%('static',v))
+                                
                                 dicts[k] = url_for('static',filename=v)
-                
-                           
+                                 
+                return dicts                           

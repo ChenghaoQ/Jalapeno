@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-
-
+import os
+from .utils.fileTree import Mgr
 #init the flask
 app = Flask(__name__)
 
@@ -16,18 +16,12 @@ freezer = Freezer(app)
 #after initialize import views
 #from app import views
 
-
-
-#from .view.index import index
-from .view.postwall import postwall
-from .view.article import article
-from .view.copyright import copyright
-from .utils.assets import asset
-
 #注册蓝图
-#app.register_blueprint(index)
-app.register_blueprint(postwall)
-app.register_blueprint(article)
-app.register_blueprint(copyright)
+file_mgr = Mgr(os.getcwd())
+views = file_mgr.target('view')
+for each in views:
+        exec('from .view.%s import %s'%(each,each))
+        app.register_blueprint(eval(each))
+from .utils.assets import asset
 app.register_blueprint(asset)
 
