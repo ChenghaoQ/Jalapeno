@@ -10,7 +10,7 @@ APP_DIR = os.path.dirname(os.path.abspath(__file__))
 def parent_dir(path):
 	return os.path.abspath(os.path.join(path,os.pardir))
 
-PROJECT_ROOT = parent_dir(APP_DIR)+'/posts'
+PROJECT_ROOT = parent_dir(APP_DIR)+'/build'
 FREEZER_DESTINATION = PROJECT_ROOT
 
 

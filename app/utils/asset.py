@@ -2,7 +2,7 @@ from app import app
 from app.utils import fileTree
 from flask import Blueprint,url_for
 import os,pickle
-from app.utils import sta
+
 
 
 asset = Blueprint("asset", __name__, template_folder='templates')
@@ -11,11 +11,12 @@ asset = Blueprint("asset", __name__, template_folder='templates')
 
 @app.context_processor
 def utility_processor():
+        #static_path = os.getcwd()+os.sep+'app'+os.sep+'static'
         tree = fileTree.Mgr(os.getcwd())
-        tree_dicts = tree.url_builder(tree.target('static'))
-        files = sta.static_assets()
-        print(1)
-        return dict(asset=tree_dicts)
+        b = tree.tree_dict()
+        a = tree.target('static')
+        print(a,'-----------------\n\n','\n\n')
+        return dict(asset=a)
 
 
 
