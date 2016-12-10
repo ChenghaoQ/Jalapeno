@@ -22,6 +22,14 @@ views = file_mgr.target('view')
 for each in views:
         exec('from .view.%s import %s'%(each,each))
         app.register_blueprint(eval(each))
+
+#from .view.postwall import postwall
+#from .view.article import article
+#from .view.copyright import copyright
 from .utils.assets import asset
+#app.register_blueprint(postwall)
+#app.register_blueprint(article)
+#app.register_blueprint(copyright)
 app.register_blueprint(asset)
+
 

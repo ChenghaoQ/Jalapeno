@@ -16,7 +16,6 @@ def utility_processor():
         tree_dicts = tree.target('static')
         assets = tree.url_builder(tree_dicts)
         files = sta.static_assets()
-        print(assets == files)
         return dict(asset=assets)
 
 
