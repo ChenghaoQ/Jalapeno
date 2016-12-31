@@ -9,6 +9,8 @@ from app.utils import configuration
 from app.utils import excerpt
 from app.utils import theme
 from app.utils import viewer
+from app.utils import shortcut
+from app.utils import articleimg
 from app.utils.flaskfroze import freezer
 print(flk.static_folder)
 print(os.getcwd())

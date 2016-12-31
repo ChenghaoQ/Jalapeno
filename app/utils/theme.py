@@ -17,7 +17,7 @@ flk.template_folder = theme.template_path()
 
 @flk.context_processor
 def theme_processor():
-
+	
 	assets = theme.static_url_for()
 	
 	return dict(asset=assets)
