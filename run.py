@@ -1,7 +1,4 @@
-from app import app
+from app import flk
 
 if __name__ =='__main__':
-	app.run(debug = True,port = 9999)
-
-
-
+	flk.run(debug = True,port = 9999)
