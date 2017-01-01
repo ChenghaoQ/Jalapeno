@@ -3,9 +3,13 @@
 
 from sys import argv
 import Jalapeno
-from Jalapeno import shortcut
+from Jalapeno import shortcuts
+from Jalapeno.path import path
+
+import os 
 #from Jalapeno.utils import shortcut
 if __name__ =='__main__':
+	print(path())
 	if len(argv) != 2:
 		print('ERROR: Not enough or too many parameters.')
 		exit()
@@ -13,5 +17,5 @@ if __name__ =='__main__':
 		Jalapeno.flk.run(debug = True,port = 9999)
 	elif argv[1] in ['-f','freeze']:
 		Jalapeno.freezer.freezer()
-	elif argv[1] in ['-s','shortcut']:
-		shortcut.create_shortcuts()
+	elif argv[1] in ['-s','shortcuts']:
+		shortcuts.create_shortcuts()

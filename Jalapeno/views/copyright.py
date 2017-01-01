@@ -5,6 +5,6 @@ copyright = Blueprint('copyright',__name__)
 @copyright.route('/copyright')
 def copy():
 	
-	print('copyright view')
+	
 	return render_template('copyright.html')
 

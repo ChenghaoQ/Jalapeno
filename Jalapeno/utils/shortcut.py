@@ -1,10 +1,12 @@
 import os
+from Jalapeno.path import path
+
 '''
         This file is build for future post-installation parts
         Help user get a shortcut at user's home dir
 '''
 def create_shortcuts():
-	source = os.getcwd()+os.sep+'Jalapeno'
+	source = path()+os.sep+'Jalapeno'
 	home = os.path.expanduser("~")
 	base = home+os.sep+'Jalapeno'
 

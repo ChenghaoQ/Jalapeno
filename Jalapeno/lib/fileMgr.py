@@ -19,7 +19,7 @@ class Mgr(object):
                         each_path = path+os.sep+each                                    
                         record = relative_path + each + os.sep
                         #except
-                        if each[0]=='.' or 'img' in each or 'pycache' in each or 'build' in each or 'fonts' in each:
+                        if each[0]=='.' or 'pycache' in each or 'build' in each or 'fonts' in each:
                                 continue 
                         ##this line is for numeric folder (articleimg)
                         if each.isdigit():

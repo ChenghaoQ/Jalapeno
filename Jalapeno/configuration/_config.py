@@ -1,4 +1,5 @@
 import os
+from Jalapeno.path import path
 from flask import render_template_string
 from markupsafe import Markup
 from flask_flatpages import pygmented_markdown
@@ -7,13 +8,13 @@ DEBUG = True
 
 
 #APP_DIR = os.path.dirname(os.path.abspath(__file__))
-APP_DIR = os.getcwd()+os.sep+'Jalapeno'
+APP_DIR = path()+os.sep+'Jalapeno'
 
-ARTICLE_IMAGE_DIR = APP_DIR+os.sep+'articleimg'
+ARTICLE_IMAGE_DIR = APP_DIR+os.sep+'pages'+os.sep+'articleimg'
 def parent_dir(path):
 	return os.path.abspath(os.path.join(path,os.pardir))
 
-PROJECT_ROOT = parent_dir(APP_DIR)+'/build'
+PROJECT_ROOT = parent_dir(APP_DIR)+os.sep+'Jalapeno'+os.sep+'build'
 FREEZER_DESTINATION = PROJECT_ROOT
 
 
@@ -28,8 +29,9 @@ FLATPAGES_EXTENSION ='.md'
 
 #deal with the jinja render before markup
 def prerender_jinja(text):
-    prerendered_body = render_template_string(Markup(text))
-    return pygmented_markdown(prerendered_body)
+    
+    return Markup(pygmented_markdown(render_template_string(text)))
+
 
 
 FLATPAGES_HTML_RENDERER = prerender_jinja

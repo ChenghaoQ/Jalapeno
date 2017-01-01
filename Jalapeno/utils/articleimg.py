@@ -1,13 +1,14 @@
 from Jalapeno import flk
 from flask import Blueprint,send_from_directory
 import os
+from Jalapeno.path import path
 from Jalapeno.lib.fileMgr import Mgr 
 from Jalapeno.lib.url_for_builder import path_url_builder
 
 articleimg = Blueprint('articleimg',__name__)
 
-article_image_path = os.getcwd()+os.sep+'Jalapeno'+os.sep+'articleimg'
-print(article_image_path)
+article_image_path = path()+os.sep+'Jalapeno'+os.sep+'pages'+os.sep+'articleimg'
+
 
 article_image_mgr = Mgr(article_image_path)
 

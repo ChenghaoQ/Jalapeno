@@ -13,4 +13,5 @@ def page(path):
 	#page may related to the template referal
 	#article is the data we extracted by python,and now we need to use template, in template, the name is page->{{ page.meta.title }}
 	#So page = article
+	print(article)
 	return render_template('article.html',page=article)

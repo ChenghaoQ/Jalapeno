@@ -1,4 +1,6 @@
 from Jalapeno.lib.fileMgr import Mgr
+from Jalapeno.path import path
+
 import os
 '''
 	This file is going to manage the theme
@@ -6,7 +8,7 @@ import os
 	push static dict to asset
 '''
 theme = 'default'
-theme_path = os.getcwd()+os.sep+'Jalapeno'+os.sep+'theme'+os.sep+theme
+theme_path = path()+os.sep+'Jalapeno'+os.sep+'theme'+os.sep+theme
 
 
 class Theme(Mgr):
@@ -14,7 +16,7 @@ class Theme(Mgr):
 	def __init__(self,theme_name):
 		self.name = theme_name
 		self.theme_relative = 'theme'+os.sep+self.theme()
-		self.theme_path = os.getcwd()+os.sep+'Jalapeno'+os.sep+ self.theme_relative
+		self.theme_path = path()+os.sep+'Jalapeno'+os.sep+ self.theme_relative
 		Mgr.__init__(self,self.path())
 
 	def theme(self):

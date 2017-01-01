@@ -2,6 +2,7 @@ import os
 from Jalapeno.lib import themeMgr
 from Jalapeno import flk
 from flask import url_for
+from Jalapeno.utils.profile import profile
 '''
 	This file is going to manage the theme
 	get the templates and static
@@ -9,7 +10,7 @@ from flask import url_for
 '''
 
 
-theme_name = 'default'
+theme_name = profile['Theme']
 theme = themeMgr.Theme(theme_name)
 flk.static_folder = theme.static_path()
 flk.template_folder = theme.template_path()
