@@ -13,13 +13,13 @@ def posts(page=1):
 	#page=1
 	PER_PAGE = 6
 	for article in articles:
-		print('llll')
+
 		if 'date' in article.meta:
 			posts.append(article)
 	#sort posts by date,descending
 	
 	sorted_posts = sorted(posts,reverse = True,key = lambda page:page.meta['date'])
-	print(sorted_posts)
+	
 	#Because of key is date, so in .md file date cannot be write in wrong format like Date
 	#pages may related to template index.html
 	pager_obj = Pag.Pagination(page,PER_PAGE,sorted_posts)

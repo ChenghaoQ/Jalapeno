@@ -11,4 +11,5 @@ from Jalapeno.utils import theme
 from Jalapeno.utils import viewer
 from Jalapeno.utils import shortcut
 from Jalapeno.utils import articleimg
+from Jalapeno.utils import profile
 from Jalapeno.utils.flaskfroze import freezer

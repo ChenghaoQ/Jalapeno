@@ -19,8 +19,14 @@ class Mgr(object):
                         each_path = path+os.sep+each                                    
                         record = relative_path + each + os.sep
                         #except
-                        if each[0]=='.' or 'img' in each or 'pycache' in each or 'build' in each or 'fonts' in each:continue 
-                        elif os.path.isdir(each_path):
+                        if each[0]=='.' or 'img' in each or 'pycache' in each or 'build' in each or 'fonts' in each:
+                                continue 
+                        ##this line is for numeric folder (articleimg)
+                        if each.isdigit():
+                                each = int(each)
+                        else:
+                                each = str(each)
+                        if os.path.isdir(each_path):
                                 L[each]=self.tree(path=each_path,relative_path=record)
                         else:
                                 L[each.split('.',1)[0]] = relative_path+each
@@ -55,4 +61,23 @@ class Mgr(object):
                                 
                                 dicts[k] = url_for('static',filename=v)
                                  
-                return dicts                           
+                return dicts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                           

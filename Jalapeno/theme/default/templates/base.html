@@ -30,14 +30,14 @@
            <div class="mask"></div>
             <header>
                 <nav>
-                    <div class="logo"><a href="#">老钱</a></div>
+                    <div class="logo"><a href="{{url_for("postwall.posts")}}">{{prof.Name}}</a></div>
                     <button class="menu_trigger">☰</button>
                     <ul class="menu">
                         
                            
                         <li><a href='{{url_for("postwall.posts")}}'>文章</a></li> 
-                        <li><a href='#'>归档</a></li> 
-                        <li><a href='#'>关于</a></li>     
+                        <!--<li><a href='#'>归档</a></li> 
+                        <li><a href='#'>关于</a></li>  -->   
                     </ul>
                     
                 </nav>
@@ -52,12 +52,12 @@
             
             <footer>
                 <ul class="share-group">
+                    <li><a href="#">Jalapeno急速运转中</a></li>
+                    <!--<li><a href="#">item</a></li>
                     <li><a href="#">item</a></li>
                     <li><a href="#">item</a></li>
-                    <li><a href="#">item</a></li>
-                    <li><a href="#">item</a></li>
-                    <li><a href="#">item</a></li>
-                </ul>    
+                    <li><a href="#">item</a></li>--> 
+                </ul>   
                 <div class="copyright">
                     &copy ChenghaoQ;
                 </div>
@@ -105,15 +105,15 @@
                         <div class="selfie"></div>
                         <div class="site-view-info">
                          
-                            <p class="motto">你总有一个坚持下去的理由</p>
+                            <p class="motto">{{prof.Motto}}</p>
                 
-                            <h3 class="myself">OldMoney</h3>
+                            <h3 class="myself">{{prof.Name}}</h3>
                             
                             <ul class="posts-info">
                             </ul>
                             <div class="extern-links">
                                <ul>
-                                   <li><a href="https://github.com/ChenghaoQ">Github</a></li>
+                                   <li><a href="{{prof.Github}}">Github</a></li>
                                <li><a>Wechat</a></li>            
                                </ul>
      

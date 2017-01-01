@@ -16,5 +16,5 @@ setup(
 	package_data={'Todooo':['data/*.dat','data/usr/*/*.dat']},
 	url='https://github.com/ChenghaoQ/Jalapeno',
 	license='',
-	description='Site Generator based on Flask'
+	description='Not yet not yet'
 )
