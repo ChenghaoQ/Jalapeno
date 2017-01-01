@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 #from setuptools import setup
-
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 setup(
 	name='Jalapeno',
-	version='0.0.1',
+	version='0.0.2',
 	author='Chenghao Qian',
 	author_email='qch.jacob.jm@gmail.com',
-	include_package_data=True,
+	#include_package_data=True,
 	packages=['Jalapeno',
 				'Jalapeno.lib',
 				'Jalapeno.utils',
@@ -16,7 +18,7 @@ setup(
 				'Jalapeno.configuration'],
 	scripts=['Jalapeno/Jalo'],
 	url='https://github.com/ChenghaoQ/Jalapeno',
-	license='',
+	license='GPL',
 	description='Not yet not yet',
 	install_requires=['Markdown >= 2.6.6',
 						'Flask >= 0.10.1',

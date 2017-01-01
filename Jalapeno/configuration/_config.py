@@ -15,8 +15,9 @@ def parent_dir(path):
 	return os.path.abspath(os.path.join(path,os.pardir))
 
 PROJECT_ROOT = parent_dir(APP_DIR)+os.sep+'Jalapeno'+os.sep+'build'
-FREEZER_DESTINATION = PROJECT_ROOT
 
+FREEZER_DESTINATION = PROJECT_ROOT
+print(FREEZER_DESTINATION,'-------')
 
 FREEZER_REMOVE_EXTRA_FILES = False
 

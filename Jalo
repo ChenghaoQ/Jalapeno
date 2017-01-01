@@ -16,6 +16,6 @@ if __name__ =='__main__':
 	if argv[1] in ['-r','run']:
 		Jalapeno.flk.run(debug = True,port = 9999)
 	elif argv[1] in ['-f','freeze']:
-		Jalapeno.freezer.freeze()
+		Jalapeno.freezer.freezer()
 	elif argv[1] in ['-s','shortcuts']:
 		shortcuts.create_shortcuts()
