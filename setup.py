@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-#from setuptools import setup
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
+
 setup(
 	name='Jalapeno',
-	version='0.0.2',
+	version='0.0.3',
 	author='Chenghao Qian',
 	author_email='qch.jacob.jm@gmail.com',
-	#include_package_data=True,
+	include_package_data=True,
 	packages=['Jalapeno',
 				'Jalapeno.lib',
 				'Jalapeno.utils',

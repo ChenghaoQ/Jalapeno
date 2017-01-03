@@ -11,5 +11,6 @@ def excerpt_spliter(article):
         pass
     else:
         sep = '\n'
-    #return Markup(pygmented_markdown(article.split(sep,1)[0]))
-    return Markup(pygmented_markdown(render_template_string(article.split(sep,1)[0])))
+   
+    return Markup(pygmented_markdown(render_template_string(article.split(sep,1)[0])),None)
+    
