@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
 	name='Jalapeno',
-	version='0.0.3',
+	version='0.0.5',
 	author='Chenghao Qian',
 	author_email='qch.jacob.jm@gmail.com',
 	include_package_data=True,
@@ -13,10 +13,11 @@ setup(
 				'Jalapeno.utils',
 				'Jalapeno.views',
 				'Jalapeno.configuration'],
-	scripts=['Jalapeno/Jalo'],
+	scripts=['Jalapeno/Jalop'],
 	url='https://github.com/ChenghaoQ/Jalapeno',
 	license='GPL',
-	description='Not yet not yet',
+	description='Static Site Generator based on Flask',
+	keywords= ['Flask','Blog','site Generator','static site'],
 	install_requires=['Markdown >= 2.6.6',
 						'Flask >= 0.10.1',
 						'Pygments >= 2.1.3 ',

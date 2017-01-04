@@ -386,8 +386,8 @@ footer .share-group li a
     right:65px;
     background:transparent url(../img/Selfie.JPG);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position:bottom;
+    background-size: cover;
+    background-position:center;
     border-radius: 5px;
 }
 
