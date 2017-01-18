@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
 	name='Jalapeno',
-	version='0.0.7',
+	version='0.0.8',
 	author='Chenghao Qian',
 	author_email='qch.jacob.jm@gmail.com',
 	include_package_data=True,
