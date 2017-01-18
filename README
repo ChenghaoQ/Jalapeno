@@ -20,21 +20,16 @@ Usage
 =====
 
 Run
-
+---
 	$ Jalop [parameters,]
 
-
-Help
-----
-
-	$ Jalop -h
-	$ Jalop help
 
 
 Generates/Freeze
 ----------------
 
 	$ Jalop -f
+
 	$ Jalop freeze
 
 Shortcuts
@@ -43,12 +38,22 @@ Shortcuts
 shortcuts will create your page source folder and build folder to deploy
 
 	$ Jalop -s
+
 	$ Jalop shortcuts
+
+Help
+----
+
+	$ Jalop -h
+
+	$ Jalop help
+	
+Other features doc included
 
 Author
 ======
 
-* `ChenghaoW <https://github.com/ChenghaoQ>`_ (Chenghao Qian <qch.jacob.jm@gmail.com>) 
+* `ChenghaoQ <https://github.com/ChenghaoQ>`_ (Chenghao Qian <qch.jacob.jm@gmail.com>) 
 
 Collaborators
 -------------

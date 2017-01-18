@@ -5,7 +5,7 @@ tags:
     tag: 随笔
     link: #
 
-![]({{aimg.test.test}})
+![]({{image.test.test1}})
 
 Look at this
 

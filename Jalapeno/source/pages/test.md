@@ -1,10 +1,7 @@
-title: test
-date: 2016-05-12
-lang: Python
-purpose: First Blog testing
-initimg: http://placehold.it/900x533
-quote: I see now that the circumstances of one’s birth are irrelevant. It is what you do with the gift of life that determines who you are.
-tag:Flask
+title: this is just testing page
+date: 2017-01-01 
+tag: Flask
+
 
 
 ##引入图片格式(Image link)
@@ -18,7 +15,7 @@ Assume we have image file with path /source/image/test/testimg.img
 
 ##摘要(exerpt)
 
- The content Before 'More' will be load to posts excerpt
+The content Before 'More' will be load to posts excerpt
 
 在'More'之前的内容会被引入到文章列表摘要
 
@@ -45,5 +42,3 @@ Assume we have image file with path /source/image/test/testimg.img
 
 
 This is just for test. Thank you for choosing Jalapeno.
-
-

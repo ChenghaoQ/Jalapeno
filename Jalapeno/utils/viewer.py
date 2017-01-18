@@ -6,11 +6,15 @@ from Jalapeno.path import path
 
 
 
-file_mgr = Mgr(path())
+#file_mgr = Mgr(path())
 views = profile['views']
 for each in views:
-        exec('from Jalapeno.views.%s import %s'%(each,each))
-        flk.register_blueprint(eval(each))
+
+	exec('from Jalapeno.views.%s import %s'%(each,each))
+
+	flk.register_blueprint(eval(each))
+
+
 
 '''
 

@@ -14,11 +14,10 @@ def posts(page=1):
 	#page=1
 	PER_PAGE = 6
 	for article in articles:
-		#print(article.meta)
-		print('\n\n')
-		article.__html__
+		print(article.meta)
 		if 'date' in article.meta:
 			posts.append(article)
+
 
 	#sort posts by date,descending
 	
@@ -33,6 +32,18 @@ def posts(page=1):
 	return render_template('index.html',pagination = pager_obj)#,asset = static_assets)
 
 
+'''
+As a good practice, classifier and date picker should work as the decorator of the article filter
+
+try to put them on next release
+
+def classifier(articles,tag):
+
+	return [each for each in articles if tag == each.meta['tag']]
+
+'''
+
+	#return [each for each in articles if tag == each.meta.tags]
 
 
 #'homepage':url_for('static',filename = 'css/homepage.css'),

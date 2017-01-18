@@ -16,7 +16,7 @@
 {% block content %}
     <div class="article_header">
         <h1 class="article_title"><a>{{ page.meta.title}}</a></h1>                   
-		<div class="article_info">{{ page.meta.date }} | 分类于: <a class = 'tag' href="{{page.tags.link}}">{{page.tags.tag}}</a></div>
+		<div class="article_info">{{ page.meta.date }} | 分类于:  <a class = 'tag' href="{{ url_for('tags.posts', tag=page.meta.tag) }}">{{page.meta.tag}}</a></div>
 	</div>
 	<article>
 		{{ page.meta.excerpt }}
@@ -57,7 +57,7 @@
 {% block js %}
         
 
-        
+<!--         
         <script type="text/javascript" src="http://assets.vicomi.com/assets/widgets_static.js"></script>
 
 
@@ -67,6 +67,6 @@
         v.src = "http://assets.vicomi.com/assets/widgets_static.js";
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(v, s);
         })();
-        </script> 
+        </script>  -->
 
 {% endblock %}

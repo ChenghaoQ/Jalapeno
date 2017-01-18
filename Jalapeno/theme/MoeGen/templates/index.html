@@ -39,11 +39,13 @@
         {% for page in pagination %}
             <div class="row">
           		<div class="col-xl-9">
-          		<H2>{{ page.meta.title }}</H2>
-          		<p style="font-family: "Avenir";">{{ page.meta.lang }} | {{ page.meta.purpose }} </p>
+              <img class = 'initimg' src = {{page.meta.initimg}}>
           	</div>
           	<div class="col-xl-3">
-              <br><br><br><br><br><br><br>
+              <H2>{{ page.meta.title }}</H2>
+
+              <p style="font-family: "Avenir";"> lang:{{ page.meta.lang }}{{ page.meta.purpose }} tag: <a href = '{{ url_for('tags.posts', tag=page.meta.tag) }}'>{{page.meta.tag}} </a></p>
+              
               {{page.body| excerpt}}...
             </div>
             
