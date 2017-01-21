@@ -9,7 +9,7 @@ from Jalapeno.path import path
 import os 
 #from Jalapeno.utils import shortcut
 
-_version = '0.0.6'
+_version = '0.0.9'
 
 
 
@@ -50,7 +50,7 @@ if __name__ =='__main__':
 	elif argv[1] in ['-t','touch']:
 		shortcuts.new_page(argv[2])
 	elif argv[1] in ['-v','version']:
-		version()
+		print("Jalapeno Ver "+version())
 
 
 

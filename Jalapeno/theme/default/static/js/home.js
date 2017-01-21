@@ -2,22 +2,33 @@
 
 (function()
 {
+	function opensidecontent(sidecont,maincont,sideme)
+	{
+	}
     function hidesidecontent(sidecont,maincont,sideme)
     {
         sidecont.animate({'left':sideme.width()-sidecont.width()},{duration:500,queue:false});
             
 		maincont.animate({'margin-left':sideme.width()},{duration:500,queue:false});
     }
+    function opensidemenu(sidecont,maincont,sideme,closebarEl)
+    {
+
+    }
     function hidesidemenu(sidecont,maincont,sideme,closeBarEl)
     {
         sidecont.animate({'left':-sidecont.width()},{duration:0});
-        console.log('ccc');
         maincont.animate({'margin-left':0},{duration:500,queue:false});
 			
         sideme.animate({'left':-sideme.width()},{duration:500,queue:false});
         closeBarEl.className= 'showbar';
     }
-    
+    function closeAll(sidecont,maincont,sideme,closeBarEl)
+    {
+    	hidesidecontent(sidecont,maincont,sideme);
+    	hidesidemenu(sidecont,maincont,sideme,closeBarEl);
+    	// +++++++++++++
+    }
     
 	var Sidemenu = function()
 	{

@@ -9,7 +9,7 @@ from Jalapeno.lib.jalop_markdown import Jalop_markdown
 #REPO_NAME = "what-is-this"
 DEBUG = True
 
-
+THREADED = True
 #APP_DIR = os.path.dirname(os.path.abspath(__file__))
 APP_DIR = path()+os.sep+'Jalapeno'
 

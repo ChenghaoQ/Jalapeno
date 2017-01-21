@@ -51,7 +51,7 @@ def content_spliter(article):
 
     content = Jalop_markdown(article)
     sep='<!--More-->'
-    return content.split(sep,1)[1] if sep in content else content
+    return content.split(sep,1)[1] if sep in content else ''
 
 
 @flk.template_filter('sidebar')
@@ -59,7 +59,7 @@ def content_spliter(article):
 
     content = Jalop_markdown(article)
     sep='<!--Sidebar-->'
-    return content.split(sep,1)[0] if sep in content else content
+    return content.split(sep,1)[0] if sep in content else ''
 
 
 

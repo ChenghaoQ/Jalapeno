@@ -10,7 +10,6 @@ tags = Blueprint('tags',__name__)
 @tags.route('/tag/<path:tag>/<int:page>/')
 def posts(tag,page=1):
 
-	print(tag)
 	posts = [article for article in articles if 'date' in article.meta and tag == article.meta['tag']]
 
 	PER_PAGE = 6

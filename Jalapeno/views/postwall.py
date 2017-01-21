@@ -14,7 +14,7 @@ def posts(page=1):
 	#page=1
 	PER_PAGE = 6
 	for article in articles:
-		print(article.meta)
+		
 		if 'date' in article.meta:
 			posts.append(article)
 
