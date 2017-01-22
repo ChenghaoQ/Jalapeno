@@ -14,7 +14,7 @@ THREADED = True
 APP_DIR = path()+os.sep+'Jalapeno'
 
 IMAGE_DIR = APP_DIR+os.sep+'source'+os.sep+'image'
-JS_EXTENSION_DIR = APP_DIR+os.sep+'source'+os.sep+'extension'
+JS_EXTENSION_DIR = APP_DIR+os.sep+'Profile'+os.sep+'extension'
 
 def parent_dir(path):
 	return os.path.abspath(os.path.join(path,os.pardir))

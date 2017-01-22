@@ -26,9 +26,10 @@ def posts(page=1):
 	#Because of key is date, so in .md file date cannot be write in wrong format like Date
 	#pages may related to template index.html
 	if profile['Pagination']:
-		pager_obj = Pag.Pagination(page,PER_PAGE,sorted_posts)
+		pager_obj = Pag.Pagination(page,PER_PAGE,sorted_posts).items
 	else:
 		pager_obj = sorted_posts
+	print(pager_obj)
 	return render_template('index.html',pagination = pager_obj)#,asset = static_assets)
 
 

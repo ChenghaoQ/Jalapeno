@@ -10,6 +10,9 @@
 		<link rel='stylesheet' media="screen and (min-width:1023px)"  href='{{asset.css.homepage}}'>
 		<link rel='stylesheet' media="screen and (max-width:1023px)"  href='{{asset.icss.ihomepage}}'>
         {% block css %}{% endblock %}
+        {% for ext in extensions %}
+        {{ext}}
+        {% endfor %}
 <!--         <script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -127,41 +130,36 @@
             
         </div>
 		<script src="{{asset.js.jquery}}"></script>
-        <script src="{{asset.js.home}}"></script>
-        <script src="{{asset.ijs.ihome}}"></script>
+        <!--<script src="{{asset.js.home}}"></script>
+        <script src="{{asset.ijs.ihome}}"></script>-->
         <script type = "text/javascript">
         $(document).ready(function(){
-            $(window).resize(function(){
-               //might be here,cannot use this type function to get parameters
-                function refresher(status,temp){
-                if($(window).width()>1024){
-                    status = 'desktop';
-                    
-                    $.getScript("{{asset.js.home}}");
-                }
-                else
-                {
-                    status = 'mobile';
-                    
-
-                    $.getScript("{{asset.ijs.ihome}}");
-                }
-                console.log(status,temp)
-                if (status!= temp)
-                {
-                    refresh();
-                    console.log(status,temp)
-                    temp = status;
-                    
-                }
-                } ;
+            if($(window).width()>1024){
+                temp = 'desktop';
+                $.getScript( "{{asset.js.home}}" )
+            }
+            else
+            {
+                temp = 'mobile';
+                $.getScript( "{{asset.ijs.ihome}}" )
+            }
+            console.log('reload');
+            function refresher(){
                 if($(window).width()>1024)
                     var status = 'desktop';
                 else
                     var status = 'mobile';
-                var temp = status;
-                refresher(status,temp);
-            });
+                if (status!= temp)
+                {
+                    location=location;//refresh page
+                    
+                    temp = status;
+                    
+                }
+                console.log(temp)
+            };
+
+            $(window).resize(refresher);
         });
         </script>
 
