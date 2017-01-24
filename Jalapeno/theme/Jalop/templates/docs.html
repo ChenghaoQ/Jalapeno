@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel='stylesheet' href='{{asset.css.docs}}'>
+{% endblock %}
+
+{% block content %} 
+ 			<div class="container">
+				<div class="content">
+					<article>
+						{{page.body | excerpt}}
+						{{page.body | content}}
+				</article>
+			</div>
+				
+				<div class="aside">
+				<div class="inner-aside">
+					<ul>
+
+						{{page.body | sidebar}}
+
+					
+					</ul>
+				</div>
+			
+			
+			
+			</div>
+			
+
+<!--		<div class="sidebar">-->
+			
+			
+		</div>
+
+{% endblock %}

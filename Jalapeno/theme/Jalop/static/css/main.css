@@ -11,6 +11,7 @@
 .navbar-header
 {
 	color:aliceblue;
+	margin: 10px auto;
 }
 .navcont
 {
@@ -27,4 +28,8 @@ footer
 	width:100%;
 	position:relative;
 	bottom:0;
+}
+img
+{
+	width:100%;
 }

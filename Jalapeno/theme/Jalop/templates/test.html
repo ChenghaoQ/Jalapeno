@@ -2,13 +2,15 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>{% block title %} {% endblock %} Jalapeno</title>
+        <title>Jalapeno</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <link rel='stylesheet' href='css/bootstrap.css'>
-    	<link rel='stylesheet' href='css/main.css'>
-    	<script src = "js/jquery.js"></script>
-    	<script src = "js/bootstrap.js"></script>
-    	{% block css %}{% endblock %}
+        <link rel='stylesheet' href='/static/css/bootstrap.css'>
+    	<link rel='stylesheet' href='/static/css/main.css'>
+    	<script src = "/static/js/jquery.js"></script>
+    	<script src = "/static/js/bootstrap.js"></script>
+    	
+<link rel='stylesheet' href='/static/css/index.css'>
+
   	
 	</head>
 	
@@ -23,12 +25,12 @@
 						<span class="icon-bar"></span>
 						
 					</button>
-					<a href="{{ url_for('index.hello') }}" class="navbar-brand">Jalapeno</a>
+					<a href="/" class="navbar-brand">Jalapeno</a>
 				</div>
 				<div class="navcont collapse navbar-collapse" id ="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						
-						<li><a href="{{ url_for('article.page', path='test') }}">Docs</a></li>
+						<li><a href="/article/test/">Docs</a></li>
 
 					</ul>
 				</div>
@@ -37,7 +39,27 @@
 
 
 		<div class="main-page">
-			{% block content %}{% endblock %}
+			 
+
+			<section class="first">
+				<div class="container">
+				<h1 class = 'first-title'>
+					<span id = 'name'>Jalapeno</span>
+					<small>based on Flask, Powered by Python 3.x</small>
+				</h1>
+				<h3>A flexible site generator.To Be What You Want.</h3>
+				<div class="buttons">
+					<button class="btn btn-magic btn-lg">Get Started</button>
+				
+				</div>
+				<a href="#">Github Project</a>
+				</div>
+				
+			</section>
+			<section class="second"></section>
+			
+		
+
 
 		<footer></footer>
 		</div>
