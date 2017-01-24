@@ -1,4 +1,4 @@
-title: this is another testing page
+title: this is just testing page
 date: 2017-01-01 
 tag: Flask
 

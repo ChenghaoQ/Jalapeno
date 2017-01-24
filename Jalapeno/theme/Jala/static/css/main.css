@@ -1,0 +1,30 @@
+.navbar
+{
+	background-color:#e78653;
+	border: none;
+	margin:0;
+	color:aliceblue;
+	height:70px;
+	
+	
+}
+.navbar-header
+{
+	color:aliceblue;
+}
+.navcont
+{
+	margin: 10px auto;
+}
+.main-page
+{
+	margin:0;
+}
+footer
+{
+	background-color:#313130;
+	min-height:150px;
+	width:100%;
+	position:relative;
+	bottom:0;
+}

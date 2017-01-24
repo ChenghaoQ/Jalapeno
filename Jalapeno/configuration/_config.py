@@ -26,15 +26,19 @@ FREEZER_DESTINATION = PROJECT_ROOT
 FREEZER_REMOVE_EXTRA_FILES = False
 
 
-FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite','tables','toc','markdown.extensions.meta']
+FLATPAGES_POSTS_MARKDOWN_EXTENSIONS = ['codehilite','tables','toc','markdown.extensions.meta']
+FLATPAGES_PAGES_MARKDOWN_EXTENSIONS = ['codehilite','tables','toc','markdown.extensions.meta']
 
-FLATPAGES_ROOT = os.path.join(APP_DIR,'source'+os.sep+'pages')
+FLATPAGES_POSTS_ROOT = os.path.join(APP_DIR,'source'+os.sep+'posts')
+FLATPAGES_PAGES_ROOT = os.path.join(APP_DIR,'source'+os.sep+'pages')
+
 #FLATPAGES_ROOT = APP_DIR+'/source' 
-FLATPAGES_EXTENSION ='.md'
-
+FLATPAGES_POSTS_EXTENSION ='.md'
+FLATPAGES_PAGES_EXTENSION ='.md'
 
 #deal with the jinja render before markup
 
 
 
-FLATPAGES_HTML_RENDERER = Jalop_markdown
+FLATPAGES_POSTS_HTML_RENDERER = Jalop_markdown
+FLATPAGES_PAGES_HTML_RENDERER = Jalop_markdown
