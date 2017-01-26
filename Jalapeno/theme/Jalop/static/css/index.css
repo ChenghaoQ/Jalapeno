@@ -28,6 +28,15 @@
 }
 .second
 {
-	min-height:600px;
+	min-height:150px;
 	background-color:#fff;
+}
+.second .feature
+{
+	text-align: center;
+	min-height:200px;
+}
+.second ul
+{
+	list-style: none;
 }
