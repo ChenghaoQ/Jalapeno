@@ -1,6 +1,6 @@
 .navbar
 {
-	/*background-color:#e78653;*/
+	background-color:#e78653;
 	border: none;
 	margin:0;
 	color:aliceblue;
@@ -34,7 +34,7 @@
 footer
 {
 	background-color:#313130;
-	min-height:150px;
+	height:150px;
 	width:100%;
 	position:relative;
 	bottom:0;
