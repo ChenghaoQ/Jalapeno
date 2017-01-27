@@ -12,7 +12,7 @@ from Jalapeno.utils.profile import profile
 
 theme_name = profile['Theme']
 theme = themeMgr.Theme(theme_name)
-print(theme.theme_file())
+
 flk.static_folder = theme.static_path()
 flk.template_folder = theme.template_path()
 

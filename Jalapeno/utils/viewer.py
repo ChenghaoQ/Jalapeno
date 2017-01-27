@@ -9,18 +9,10 @@ from Jalapeno.path import path
 #file_mgr = Mgr(path())
 views = profile['views']
 for each in views:
-
-	exec('from Jalapeno.views.%s import %s'%(each,each))
-
+	print("Loading %s"%each)
+	try:
+		exec('from Jalapeno.views.%s import %s'%(each,each))
+	except:
+		print("Loading failed with %s------------"%each)
 	flk.register_blueprint(eval(each))
 
-
-
-'''
-
-from Jalapeno.views.article import article
-from Jalapeno.views.postwall import postwall
-from Jalapeno.views.copyright import copyright
-flk.register_blueprint(copyright)
-flk.register_blueprint(article)
-flk.register_blueprint(postwall)'''

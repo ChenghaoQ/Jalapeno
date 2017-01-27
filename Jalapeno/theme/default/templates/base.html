@@ -33,12 +33,12 @@
            <div class="mask"></div>
             <header>
                 <nav>
-                    <div class="logo"><a href="{{url_for("postwall.posts")}}">{{prof.Name}}</a></div>
+                    <div class="logo"><a href="{{url_for('posts.postpage')}}">{{prof.Name}}</a></div>
                     <button class="menu_trigger">☰</button>
                     <ul class="menu">
                         
                            
-                        <li><a href='{{url_for("postwall.posts")}}'>文章</a></li> 
+                        <li><a href='{{url_for("posts.postpage")}}'>文章</a></li> 
                         <!--<li><a href='#'>归档</a></li> 
                         <li><a href='#'>关于</a></li>  -->   
                     </ul>
@@ -87,7 +87,7 @@
         <div id="sidebar">
             <div id="sidebar-menu">
 
-               	<div id="home"><a href="{{ url_for('postwall.posts') }}"><span class="glyphicon glyphicon-home"></span></a></div>
+               	<div id="home"><a href="{{ url_for('posts.postpage') }}"><span class="glyphicon glyphicon-home"></span></a></div>
                	<ul>
                	    {% block sidebar_menu %}{% endblock %}
                	    <li id="site-view" class="item">
