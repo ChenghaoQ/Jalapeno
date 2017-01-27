@@ -32,3 +32,14 @@ def posts(page=1):
 		pager_obj = sorted_posts
 	print(pager_obj)
 	return render_template('index.html',pagination = pager_obj)
+
+
+	def get_template(L,keystring):
+	for each in L:
+		return L[0][2] if keystring in L else None
+
+
+for each in L:
+	if isinstance(each[1],list):
+		for ea in each[1]:
+			docs.add_url_rule(each[0].each[1],webpage)
