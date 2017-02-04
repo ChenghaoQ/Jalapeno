@@ -1,4 +1,4 @@
-from Jalapeno import flk
+from Jalapeno import app
 from flask import Blueprint,send_from_directory
 import os
 from Jalapeno.path import path
@@ -12,7 +12,7 @@ image_path = path()+os.sep+'Jalapeno'+os.sep+'source'+os.sep+'image'
 
 image_file_mgr = Mgr(image_path)
 
-@flk.context_processor
+@app.context_processor
 def image_mgr():
 	images = image_file_mgr.tree_dict()
 	images_dict = path_url_builder(images,'image.img')
@@ -20,7 +20,7 @@ def image_mgr():
 
 @image.route('/image/<path:path>')
 def img(path):
-	return send_from_directory(flk.config['IMAGE_DIR'],
+	return send_from_directory(app.config['IMAGE_DIR'],
                                path, as_attachment=True)
 
-flk.register_blueprint(image)
+app.register_blueprint(image)

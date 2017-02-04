@@ -4,24 +4,24 @@ from Jalapeno.utils.configuration import config
 from Jalapeno.lib.selector import flatpage_filter,view_register,get_template
 
 try:
-	L = config['views']['article'].values()
+	L = config['views']['markpage'].values()
 except:
 	exit()
 
-article = Blueprint('article',__name__)
+markpage = Blueprint('markpage',__name__)
 
-def page(path):
+def marker(path):
 	rule = request.url_rule.rule
-	flat_rule = flatpage_filter(rule,config)
+	
 	
 	template = get_template(L,rule)
 
 
-	article = sitepages[flat_rule].get_or_404(path)
-	return render_template(template,page=article)
+	markpage = sitepages['markpage'].get_or_404(path)
+	return render_template(template,page=markpage)
 
 
 
 
 
-view_register(L,article,page)
+view_register(L,markpage,marker)

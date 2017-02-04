@@ -2,10 +2,10 @@ from flask import Flask
 import os
 
 #Flask init
-flk = Flask(__name__)
+app = Flask(__name__)
 '''
 from Jalapeno.utils import configuration
-from Jalapeno.utils.flatpage import articles
+from Jalapeno.utils.flatpage import sitepages
 from Jalapeno.utils import excerpt
 from Jalapeno.utils import theme
 from Jalapeno.utils import viewer
@@ -17,14 +17,15 @@ from Jalapeno.utils.flaskfroze import freezer
 
 modules =(
 		  ['Jalapeno.utils','configuration'],
-		  ['Jalapeno.utils.flatpage','articles'],
+		  ['Jalapeno.utils.flatpage','sitepages'],
 		  ['Jalapeno.utils','excerpt'],
 		  ['Jalapeno.utils','theme'],
 		  ['Jalapeno.utils','viewer'],
 		  ['Jalapeno.lib','shortcuts'],
 		  ['Jalapeno.utils','imageMgr'],
 		  ['Jalapeno.utils.flaskfroze','freezer'],
-		  ['Jalapeno.utils','extension']
+		  ['Jalapeno.utils','extension'],
+		  ['Jalapeno.utils','profile']
 		   )
 
 for each in modules:

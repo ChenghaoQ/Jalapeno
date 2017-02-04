@@ -1,4 +1,4 @@
-from Jalapeno import flk
+from Jalapeno import app
 from flask import Blueprint,send_from_directory
 import os
 from Jalapeno.path import path
@@ -14,19 +14,18 @@ extension_path = path()+os.sep+'Jalapeno'+os.sep+'Profile'+os.sep+'extension'
 
 extension_file_mgr = Mgr(extension_path)
 
-@flk.context_processor
+@app.context_processor
 def extension_mgr():
-	#extensions_dict = path_url_builder(extensions,'extension.ext')
-	extensions_list = ext_content_dict(extension_path)
+	extensions_list = ext_content_list(extension_path)
 	return dict(extensions = extensions_list)
 
 @extension.route('/extension/<path:path>')
 def ext(path):
-	return send_from_directory(flk.config['JS_EXTENSION_DIR'],
-                               path, as_attachment=True)
+	return send_from_directory(app.config['JS_EXTENSION_DIR'],
+                               path, as_attachment=False)
 
 
-def ext_content_dict(path):
+def ext_content_list(path):
 	extensions = extension_file_mgr.tree_dict()
 	ext_content = []
 	for k,v in extensions.items():
@@ -54,4 +53,4 @@ def ext_content_dict(path):
 
 
 
-flk.register_blueprint(extension)
+app.register_blueprint(extension)

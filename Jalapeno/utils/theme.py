@@ -1,8 +1,8 @@
 import os
 from Jalapeno.lib import themeMgr
-from Jalapeno import flk
+from Jalapeno import app
 from flask import url_for
-from Jalapeno.utils.profile import profile
+from Jalapeno.utils.configuration import config
 '''
 	This file is going to manage the theme
 	get the templates and static
@@ -10,14 +10,14 @@ from Jalapeno.utils.profile import profile
 '''
 
 
-theme_name = profile['Theme']
+theme_name = config['Theme']
 theme = themeMgr.Theme(theme_name)
 
-flk.static_folder = theme.static_path()
-flk.template_folder = theme.template_path()
+app.static_folder = theme.static_path()
+app.template_folder = theme.template_path()
 
 
-@flk.context_processor
+@app.context_processor
 def theme_processor():
 	
 	assets = theme.static_url_for()

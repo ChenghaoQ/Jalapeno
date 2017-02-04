@@ -1,41 +1,16 @@
 from Jalapeno.lib.jalop_markdown import Jalop_markdown
-from Jalapeno import flk
-'''
+from Jalapeno import app
+from Jalapeno.utils.flatpage import sitepages
+from flask import request
+from Jalapeno.utils.configuration import config
+from Jalapeno.lib.selector import flatpage_filter
 
-@flk.template_filter('excerpt')
+
+@app.template_filter('excerpt')
 def excerpt_spliter(article):
-    
-    sidesep = '<!--Sidebar-->'
-
-    if sidesep in article:
-        article = article.split(sidesep,1)[1]
-        print(article)
-
-    sep='<!--More-->'
-    if sep in article:
-        pass
-    else:
-        sep = '\n'
-    return Jalop_markdown(article.split(sep,1)[0])
-
-
-
-
-@flk.template_filter('sidebar')
-def excerpt_spliter(article):
-    
-    sidesep = '<!--Sidebar-->'
-    if sidesep in article:
-        pass
-    else:
-        sep = '\n'
-    return Jalop_markdown(article.split(sidesep,1)[0])
-    '''
-
-@flk.template_filter('excerpt')
-def excerpt_spliter(article):
-
-    content = Jalop_markdown(article)
+    rule = request.url_rule.rule
+    flat_rule = flatpage_filter(rule,config)
+    content = Jalop_markdown(article,sitepages[flat_rule])
     
     sidesep = '<!--Sidebar-->'
 
@@ -43,27 +18,31 @@ def excerpt_spliter(article):
         content = content.split(sidesep,1)[1]
 
     sep='<!--More-->'
-    return content.split(sep,1)[0] if sep in content else content
+    return content.split(sep,1)[0] if sep in content else ''
 
 
-@flk.template_filter('content')
+@app.template_filter('content')
 def content_spliter(article):
+    rule = request.url_rule.rule
+    flat_rule = flatpage_filter(rule,config)
+    content = Jalop_markdown(article,sitepages[flat_rule])
+    sep='<!--Sidebar-->'
+    return content.split(sep,1)[1] if sep in content else content
 
-    content = Jalop_markdown(article)
-    sep='<!--More-->'
-    return content.split(sep,1)[1] if sep in content else ''
 
-
-@flk.template_filter('sidebar')
+@app.template_filter('sidebar')
 def content_spliter(article):
-
-    content = Jalop_markdown(article)
+    rule = request.url_rule.rule
+    flat_rule = flatpage_filter(rule,config)
+    content = Jalop_markdown(article,sitepages[flat_rule])
     sep='<!--Sidebar-->'
     return content.split(sep,1)[0] if sep in content else ''
 
 
 
 
+		
+	
 
 
 

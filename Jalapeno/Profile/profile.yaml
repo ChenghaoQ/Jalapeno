@@ -6,55 +6,10 @@ Github: https://github.com/ChenghaoQ
 copyright: ChenghaoQ
 
 
-Theme: Jalop
-views:
-  # - postwall
-  # - copyright
-  # - article
-  # - about
-  # - tags
-  - index
-  - docs
-  # - page
-  # - posts
+Theme: default
 
 Pagination: True
 
-view:
-    page:
-        -
-         - '/'
-         - welcome
-         - index.html
-    # posts:
-    #     -
-    #      - ['/','/page/<int:page>/']
-    #      - postpage
-    #      - index.html
-
-    # article:
-    #     -
-    #      - /article/<path:path>/
-    #      - page
-    #      - article.html
-    docs:
-        -
-         - /docs/<path:path>/
-         - page
-         - docs.html
-        -
-         - /doc/<path:path>/
-         - page
-         - docs.html
-        -
-         - /do/
-         - page
-         - index.html
-    # tags:
-    #     -
-    #      - ['/tag/<path:tag>/','/tag/<path:tag>/<int:page>/']
-    #      - posts
-    #      - index.html
 
 
 

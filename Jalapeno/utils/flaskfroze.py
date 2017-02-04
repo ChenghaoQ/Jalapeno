@@ -1,4 +1,4 @@
 from flask_frozen import Freezer
-from Jalapeno import flk
+from Jalapeno import app
 #init Freezer
-freezer = Freezer(flk)
+freezer = Freezer(app)

@@ -38,7 +38,7 @@ if __name__ =='__main__':
 		print('ERROR: Not enough or too many parameters. use "Jalop help" or "Jalop -h" for help')
 		exit()
 	if argv[1] in ['-r','run']:
-		Jalapeno.flk.run(debug = True,port = 9999)
+		Jalapeno.app.run(debug = True,port = 9999)
 	elif argv[1] in ['-f','freeze']:
 		Jalapeno.freezer.freeze()
 	elif argv[1] in ['-s','shortcuts']:
