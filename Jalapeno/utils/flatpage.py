@@ -13,7 +13,7 @@ sitepages = {}
 
 flatpage_mods = ['markpages']
 for pagetype in config['views']:	
-	if pagetype in ['posts']:
+	if pagetype in ['posts'] or pagetype in ['docs']:
 		flatpage_mods.extend(config['views'][pagetype])	
 for each in flatpage_mods:
 	flat = FlatPages(app,name=each)

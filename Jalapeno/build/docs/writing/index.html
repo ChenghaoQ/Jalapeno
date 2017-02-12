@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Jalapeno</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel='stylesheet' href='/static/css/fontawesome.css'>
+        <link rel='stylesheet' href='/static/css/bootstrap.css'>
+    	<link rel='stylesheet' href='/static/css/main.css'>
+    	<script src = "/static/js/jquery.js"></script>
+    	<script src = "/static/js/bootstrap.js"></script>
+		<script src = "/static/js/main.js"></script>
+    	
+<link rel='stylesheet' href='/static/css/docs.css'>
+
+  	
+	</head>
+	
+	<body>
+		<div class="main-page">
+			<nav class="navbar navbar-default navbar-inverse" role = "navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type='button' class="navbar-toggle collapsed" data-toggle= 'collapse' data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+
+						</button>
+						<a href="/" class="navbar-brand">
+							Jalapeno</a>
+					</div>
+					<div class="navcont collapse navbar-collapse" id ="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+
+							<li><a href="/docs/test/">文档</a></li>
+<!--							<li><a href="#">API</a></li>-->
+						</ul>
+					</div>
+					</div>
+			</nav>
+
+			
+				 
+ 			<div class="container">
+
+				
+
+				<div class="content">
+					<article>
+						<h2>开始一篇博客</h2>
+						
+						<h3 id="new">New</h3>
+<p>现在你准备好了吗？</p>
+<p>首先我们要在'pages'文件夹下创建一个空白文档'test.md',这里test只是一个名字，你可以给你的文章起任何名字，它将会影响到你未来网页的链接地址：</p>
+<div class="codehilite"><pre><span></span>yourwebsite.com/article/test
+</pre></div>
+
+
+<h3 id="title">Title</h3>
+<p>接着我们要编辑文档的开头，注意冒号后面要空格</p>
+<div class="codehilite"><pre><span></span><span class="n">title</span><span class="o">:</span> <span class="err">这里写文章标题</span>
+<span class="n">date</span><span class="o">:</span> <span class="err">这里写发表日期，格式为</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span> 
+<span class="n">tag</span><span class="o">:</span> <span class="err">这里是你的文章分类</span><span class="o">/</span><span class="err">标签名称</span>
+</pre></div>
+
+
+<h3 id="content">Content</h3>
+<p>接着我们编写正文，正文要与之前的开头用一个空行隔开</p>
+<div class="codehilite"><pre><span></span>hello world!balabalabala....
+
+balabalabala....
+
+balabalabala....
+</pre></div>
+
+
+<h3 id="image">Image</h3>
+<p>在之前我们提到过图片都放在image文件夹下的文章同名子文件夹下，现在假设我们的testpic.jpg在image/test文件夹下，路径为</p>
+<div class="codehilite"><pre><span></span>Jalapeno/source/image/test/testimg.jpg
+</pre></div>
+
+
+<p>我们配合Markdown引用图片的语法:</p>
+<div class="codehilite"><pre><span></span>\!\[\]\(\图片地址)
+</pre></div>
+
+
+<p>而我们的图片地址表示方法为</p>
+<div class="codehilite"><pre><span></span>\{\{image.子文件夹名.图片名}}，
+</pre></div>
+
+
+<p>所以最后引用的方法为</p>
+<div class="codehilite"><pre><span></span>hello world!balabalabala....
+
+\![]({\{image.test.testpic}})
+
+balabalabala....
+
+balabalabala....
+</pre></div>
+
+
+<h3 id="excerpt">Excerpt</h3>
+<p>如果你想在文章列表中显示摘要，我们使用&lt;!--More--&gt;来进行分隔。&lt;!--More--&gt;之前内容会被放到你的文章列表的摘要中</p>
+<div class="codehilite"><pre><span></span>hello world!balabalabala....
+
+&lt;!\--More--&gt;
+
+balabalabala....
+
+balabalabala....
+</pre></div>
+
+
+<h3 id="sidebar-content">Sidebar-content</h3>
+<p>如果你想在你的文章中启用索引/目录，我们使用[TOC]作为标示，将[TOC]放入你希望的位置，Jalapeno会在该位置生成目录。前提是你有使用'#'号来注明各个子标题</p>
+<div class="codehilite"><pre><span></span>\[TOC\]
+
+hello world!balabalabala....
+
+&lt;!\--More--&gt;
+
+##第一个标题
+
+balabalabala....
+
+##第二个标题
+
+balabalabala....
+</pre></div>
+
+
+<p>如果你想将目录放入侧边栏而不是正文，我们使用&lt;!--Siderbar--&gt;进行标记，&lt;!--Siderbar--&gt;上面的内容会被放入侧边栏目录中，注意，与[TOC]用空行隔开</p>
+<div class="codehilite"><pre><span></span>\[TOC\]
+
+&lt;!\--Siderbar--&gt;
+
+hello world!balabalabala....
+
+&lt;!\--More--&gt;
+
+##第一个标题
+
+balabalabala....
+
+##第二个标题
+
+balabalabala....
+</pre></div>
+
+
+<h3 id="syntax">Syntax</h3>
+<p>想要了解更多Markdown语法，参见<a href="https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">Markdown 语法说明</a></p>
+<p>到这里，我们的博客就写完啦，在发布前我们需要对其测试</p>
+				</article>
+				</div>
+			
+			
+			
+			</div>
+						
+			
+		
+
+
+			
+			
+			
+						
+            <a id="sidebar-trigger"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <a class="back-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+			
+			
+			<footer>
+			<div class="container-fluid footer">
+				<div class = "row">
+					<div class="footer-info col-xs-8">
+						<p>Copyright &copy Chenghao Qian 2016-2017</p>
+						<p>Powered By Jalapeno</p>
+					</div>
+					<div class="icon-group col-xs-4">
+						<br>
+						<ul>
+							<li><a href="#">
+								<i class="fa fa-github fa-3x" aria-hidden="true"></i>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+				
+				
+			</footer>
+			
+		</div>
+		<div id = "sidebar">
+			
+
+<ul class="nav nav-tabs" role="tablist">
+	
+	<li class = "active"><a href = #catalog role ="tab" data-toggle="tab">Catalog</a></li>
+	<li><a href = #content role ="tab" data-toggle="tab">Content</a></li>
+</ul>
+
+<div class ="tab-content">
+	<div class ="tab-pane active" id ="catalog">
+		<ul>
+			<li class="li-title">Content</li>
+				
+			<li><a href="/docs/test/">this is another testing page</a></li>
+				
+			<li><a href="/docs/config/">初始化&amp;配置</a></li>
+				
+			<li><a href="/docs/shortcutdir/">Jalapeno目录介绍</a></li>
+				
+			<li><a href="/docs/install/">安装</a></li>
+				
+			<li><a href="/docs/writing/">开始一篇博客</a></li>
+						
+		</ul>
+	</div>
+	<div class ="tab-pane" id ="content">
+		
+	</div>
+</div>
+
+
+
+
+		</div>
+	</body>
+</html>

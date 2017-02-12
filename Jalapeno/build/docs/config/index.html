@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Jalapeno</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel='stylesheet' href='/static/css/fontawesome.css'>
+        <link rel='stylesheet' href='/static/css/bootstrap.css'>
+    	<link rel='stylesheet' href='/static/css/main.css'>
+    	<script src = "/static/js/jquery.js"></script>
+    	<script src = "/static/js/bootstrap.js"></script>
+		<script src = "/static/js/main.js"></script>
+    	
+<link rel='stylesheet' href='/static/css/docs.css'>
+
+  	
+	</head>
+	
+	<body>
+		<div class="main-page">
+			<nav class="navbar navbar-default navbar-inverse" role = "navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type='button' class="navbar-toggle collapsed" data-toggle= 'collapse' data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+
+						</button>
+						<a href="/" class="navbar-brand">
+							Jalapeno</a>
+					</div>
+					<div class="navcont collapse navbar-collapse" id ="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+
+							<li><a href="/docs/test/">文档</a></li>
+<!--							<li><a href="#">API</a></li>-->
+						</ul>
+					</div>
+					</div>
+			</nav>
+
+			
+				 
+ 			<div class="container">
+
+				
+
+				<div class="content">
+					<article>
+						<h2>初始化&amp;配置</h2>
+						
+						<h3 id="jalapeno">初始化Jalapeno目录</h3>
+<p>首先我们在终端执行</p>
+<div class="codehilite"><pre><span></span><span class="p">$</span><span class="nv">Jalop</span><span class="x"> -s</span>
+</pre></div>
+
+
+<p>或</p>
+<div class="codehilite"><pre><span></span><span class="p">$</span><span class="nv">Jalop</span><span class="x"> shortcuts</span>
+</pre></div>
+
+
+<p>该指令可以在你的用户主目录（下载／文档／图片／...的上一级目录）下生成一个'Jalapeno'文件夹，但是你的文件夹上面会有一把锁子的图标，意味着你的文件夹需要访问权限，需要输入密码才能修改，你可能会说这多不方便啊。于是我们有了下面的操作，把这把锁子去掉</p>
+<div class="codehilite"><pre><span></span><span class="p">$</span><span class="nv">Jalop</span><span class="x"> -u</span>
+</pre></div>
+
+
+<p>或</p>
+<div class="codehilite"><pre><span></span><span class="p">$</span><span class="nv">Jalop</span><span class="x"> unlock</span>
+</pre></div>
+
+
+<p>好了，来看我们的目录文件夹吧。</p>
+<h3 id="_1">配置个人信息</h3>
+<p>在第一次运行前我们需要对Jalapeno进行简单的配置，例如你的个人信息什么的，在我们生成的Jalapeno文件夹的Profile子文件夹中有一个'profile.yaml'文件，用编辑器打开它，找到并修改以下内容</p>
+<div class="codehilite"><pre><span></span><span class="n">Name</span><span class="o">:</span> <span class="err">我的博客</span>
+<span class="n">Motto</span><span class="o">:</span> <span class="err">你总有一个坚持下去的理由</span>
+<span class="n">Github</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="na">com</span><span class="o">/</span><span class="n">ChenghaoQ</span>
+<span class="n">copyright</span><span class="o">:</span> <span class="err">版权归</span><span class="n">ChenghaoQ所有</span>
+</pre></div>
+
+
+<p>除此之外，本主题含有的页面头像对应Jalapeno/source/image/theme/Selfie.jpg,如果需要更改使用其他文件替换即可</p>
+<p>效果展示</p>
+				</article>
+				</div>
+			
+			
+			
+			</div>
+						
+			
+		
+
+
+			
+			
+			
+						
+            <a id="sidebar-trigger"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <a class="back-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+			
+			
+			<footer>
+			<div class="container-fluid footer">
+				<div class = "row">
+					<div class="footer-info col-xs-8">
+						<p>Copyright &copy Chenghao Qian 2016-2017</p>
+						<p>Powered By Jalapeno</p>
+					</div>
+					<div class="icon-group col-xs-4">
+						<br>
+						<ul>
+							<li><a href="#">
+								<i class="fa fa-github fa-3x" aria-hidden="true"></i>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+				
+				
+			</footer>
+			
+		</div>
+		<div id = "sidebar">
+			
+
+<ul class="nav nav-tabs" role="tablist">
+	
+	<li class = "active"><a href = #catalog role ="tab" data-toggle="tab">Catalog</a></li>
+	<li><a href = #content role ="tab" data-toggle="tab">Content</a></li>
+</ul>
+
+<div class ="tab-content">
+	<div class ="tab-pane active" id ="catalog">
+		<ul>
+			<li class="li-title">Content</li>
+				
+			<li><a href="/docs/test/">this is another testing page</a></li>
+				
+			<li><a href="/docs/config/">初始化&amp;配置</a></li>
+				
+			<li><a href="/docs/shortcutdir/">Jalapeno目录介绍</a></li>
+				
+			<li><a href="/docs/install/">安装</a></li>
+				
+			<li><a href="/docs/writing/">开始一篇博客</a></li>
+						
+		</ul>
+	</div>
+	<div class ="tab-pane" id ="content">
+		
+	</div>
+</div>
+
+
+
+
+		</div>
+	</body>
+</html>

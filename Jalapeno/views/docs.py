@@ -14,8 +14,8 @@ L = config['views']['docs'].values()
 def page(path):
 	rule = request.url_rule.rule
 	flat_rule = flatpage_filter(rule,config)
-	titles = [[each.meta['title'],each.path] for each in articles]
-	article = articles.get_or_404(path)
+	titles = [[each.meta['title'],each.path] for each in sitepages[flat_rule]]
+	article = sitepages[flat_rule].get_or_404(path)
 	
 	template = get_template(L,rule)
 	

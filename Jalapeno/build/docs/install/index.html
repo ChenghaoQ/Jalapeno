@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Jalapeno</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel='stylesheet' href='/static/css/fontawesome.css'>
+        <link rel='stylesheet' href='/static/css/bootstrap.css'>
+    	<link rel='stylesheet' href='/static/css/main.css'>
+    	<script src = "/static/js/jquery.js"></script>
+    	<script src = "/static/js/bootstrap.js"></script>
+		<script src = "/static/js/main.js"></script>
+    	
+<link rel='stylesheet' href='/static/css/docs.css'>
+
+  	
+	</head>
+	
+	<body>
+		<div class="main-page">
+			<nav class="navbar navbar-default navbar-inverse" role = "navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type='button' class="navbar-toggle collapsed" data-toggle= 'collapse' data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+
+						</button>
+						<a href="/" class="navbar-brand">
+							Jalapeno</a>
+					</div>
+					<div class="navcont collapse navbar-collapse" id ="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+
+							<li><a href="/docs/test/">文档</a></li>
+<!--							<li><a href="#">API</a></li>-->
+						</ul>
+					</div>
+					</div>
+			</nav>
+
+			
+				 
+ 			<div class="container">
+
+				
+
+				<div class="content">
+					<article>
+						<h2>安装</h2>
+						
+						<h2 id="_1">安装</h2>
+<p>在使用Jalapeno之前，我们需要先将所需的软件下载下来。如果已经安装或者电脑上带有，则跳过此环节</p>
+<ul>
+<li>Python3</li>
+<li>pip3(Python3的软件包管理器)</li>
+<li>Jalapeno(我们的博客生成器)</li>
+<li>git(将网页文件部署至Github／Coding)</li>
+</ul>
+<h3 id="python3pip3">Python3/pip3 系列安装</h3>
+<p>我们在<a href="https://www.python.org/downloads/">Python</a>的官方网站可以下载对应的版本，最新版本为3.6.0</p>
+<h3 id="_2">终端安装方法</h3>
+<p>我们以Fedora（Linux）为例</p>
+<p>sudo dnf install python3 python3-pip</p>
+<p>Ubuntu:</p>
+<p>sudo apt-get install python3 python3-pip</p>
+<p>Mac:</p>
+<p>先安装homwbrew</p>
+<div class="codehilite"><pre><span></span>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</pre></div>
+
+
+<p>使用brew(包管理器，类似于dnf/apt)</p>
+<div class="codehilite"><pre><span></span>brew install python3
+</pre></div>
+
+
+<p>让我们来测试一下</p>
+<p>在终端输入'python3'：</p>
+<div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">pages</span> <span class="n">Jakob$</span> <span class="n">python3</span>
+</pre></div>
+
+
+<p>成功进入到Python3的交互界面,注意版本号，当前版本是3.5.1，对我们来说3.4以上的版本最好</p>
+<div class="codehilite"><pre><span></span>Python 3.5.1 (default, Jan 22 2016, 08:52:08) 
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+
+
+<p>再来看我们的pip3,在终端输入'pip3 -V'查看版本：</p>
+<div class="codehilite"><pre><span></span><span class="n">localhost</span><span class="o">:</span><span class="n">pages</span> <span class="n">Jakob$</span> <span class="n">pip3</span> <span class="o">-</span><span class="n">V</span>
+</pre></div>
+
+
+<p>得到（pip3版本号8以上即可)</p>
+<div class="codehilite"><pre><span></span>pip 8.0.2 from /usr/local/lib/python3.5/site-packages (python 3.5)
+</pre></div>
+
+
+<p>大功告成！来看我们如何安装Jalapeno</p>
+<h3 id="jalapeno">Jalapeno安装</h3>
+<p>Jalapeno的安装过程十分简单，你只需要在终端执行以下代码即可。如果你遇到无法解决的问题，在这里<a href="">提交问题</a>，我会尽快作出回应。</p>
+<div class="codehilite"><pre><span></span><span class="p">$</span><span class="nv">sudo</span><span class="x"> pip3 install Jalapeno</span>
+
+<span class="x">Collecting Jalapeno</span>
+<span class="x">  Downloading Jalapeno-0.0.8.tar.gz (4.5MB)</span>
+<span class="x">    100% |████████████████████████████████| 4.5MB 91kB/s </span>
+<span class="x">Installing collected packages: Jalapeno</span>
+<span class="x">  Running setup.py install for Jalapeno ... done</span>
+<span class="x">Successfully installed Jalapeno-0.0.8</span>
+<span class="p">$</span><span class="x"></span>
+</pre></div>
+
+
+<p>我们测试一下，直接在终端输入'Jalop',会得到</p>
+<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="n">Not</span> <span class="n">enough</span> <span class="n">or</span> <span class="n">too</span> <span class="n">many</span> <span class="n">parameters</span><span class="o">.</span> <span class="n">use</span> <span class="s2">&quot;Jalop help&quot;</span> <span class="n">or</span> <span class="s2">&quot;Jalop -h&quot;</span> <span class="k">for</span> <span class="n">help</span>
+</pre></div>
+
+
+<p>上面的报错是Jalop执行的结果，我们可以看到Jalop是已经被安装到电脑上的。</p>
+				</article>
+				</div>
+			
+			
+			
+			</div>
+						
+			
+		
+
+
+			
+			
+			
+						
+            <a id="sidebar-trigger"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            <a class="back-to-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+			
+			
+			<footer>
+			<div class="container-fluid footer">
+				<div class = "row">
+					<div class="footer-info col-xs-8">
+						<p>Copyright &copy Chenghao Qian 2016-2017</p>
+						<p>Powered By Jalapeno</p>
+					</div>
+					<div class="icon-group col-xs-4">
+						<br>
+						<ul>
+							<li><a href="#">
+								<i class="fa fa-github fa-3x" aria-hidden="true"></i>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+				
+				
+			</footer>
+			
+		</div>
+		<div id = "sidebar">
+			
+
+<ul class="nav nav-tabs" role="tablist">
+	
+	<li class = "active"><a href = #catalog role ="tab" data-toggle="tab">Catalog</a></li>
+	<li><a href = #content role ="tab" data-toggle="tab">Content</a></li>
+</ul>
+
+<div class ="tab-content">
+	<div class ="tab-pane active" id ="catalog">
+		<ul>
+			<li class="li-title">Content</li>
+				
+			<li><a href="/docs/test/">this is another testing page</a></li>
+				
+			<li><a href="/docs/config/">初始化&amp;配置</a></li>
+				
+			<li><a href="/docs/shortcutdir/">Jalapeno目录介绍</a></li>
+				
+			<li><a href="/docs/install/">安装</a></li>
+				
+			<li><a href="/docs/writing/">开始一篇博客</a></li>
+						
+		</ul>
+	</div>
+	<div class ="tab-pane" id ="content">
+		
+	</div>
+</div>
+
+
+
+
+		</div>
+	</body>
+</html>

@@ -9,7 +9,7 @@ from Jalapeno.path import path
 import os 
 #from Jalapeno.utils import shortcut
 
-_version = '0.0.9'
+_version = '0.1.1'
 
 
 
