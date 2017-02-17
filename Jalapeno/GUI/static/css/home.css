@@ -1,0 +1,49 @@
+
+.main-page
+{
+	margin:0;
+}
+
+.sidebar
+{
+	background:#222;
+	background-color:rgba(0,0,0,0.8);
+	width:280px;
+	position:fixed;
+	top:0px;
+	bottom:0;
+	left:0px;
+	color:wheat;
+	
+}
+.sidebar h1
+{
+	text-align: center;
+}
+.cardgroup
+{
+	width:inherit;
+}
+.card
+{
+	height:150px;
+	color:white;
+}
+.card a
+{
+	height:inherit;
+	width:inherit;
+	display:block;
+	padding:60px 30px;
+	vertical-align: middle;
+	
+}
+a
+{
+	color:wheat;
+}
+a:hover
+{
+	text-decoration: none;
+	color:azure;
+}
