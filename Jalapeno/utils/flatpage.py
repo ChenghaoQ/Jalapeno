@@ -1,12 +1,12 @@
 from flask_flatpages import FlatPages
-from Jalapeno import app
+from Jalapeno.core import app
 import os
-from Jalapeno.utils.configuration import config
+from Jalapeno.utils.config import config
 from Jalapeno.lib.jalop_markdown import Jalop_markdown
-from Jalapeno.path import path
+from Jalapeno.path import APP_DIR
 
 
-flatpage_source = path()+os.sep+'Jalapeno'+os.sep+'source'
+flatpage_source = APP_DIR+os.sep+'Jalapeno'+os.sep+'Pages'
 
 
 sitepages = {}

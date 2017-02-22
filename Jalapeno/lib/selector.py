@@ -1,3 +1,5 @@
+'''This module includes the function to create different flatpages and views'''
+
 def flatpage_filter(rule,config):
 	ret = False
 	hold = []

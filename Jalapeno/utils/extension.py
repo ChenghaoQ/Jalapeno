@@ -1,7 +1,7 @@
-from Jalapeno import app
+from Jalapeno.core import app
 from flask import Blueprint,send_from_directory
 import os
-from Jalapeno.path import path
+from Jalapeno.path import APP_DIR
 from Jalapeno.lib.fileMgr import Mgr 
 from Jalapeno.lib.url_for_builder import path_url_builder
 from markupsafe import Markup
@@ -9,7 +9,7 @@ from markupsafe import Markup
 
 extension = Blueprint('extension',__name__)
 
-extension_path = path()+os.sep+'Jalapeno'+os.sep+'Profile'+os.sep+'extension'
+extension_path = APP_DIR+os.sep+'Jalapeno'+os.sep+'source'+os.sep+'extension'
 
 
 extension_file_mgr = Mgr(extension_path)

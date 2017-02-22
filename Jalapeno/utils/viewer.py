@@ -1,14 +1,12 @@
-from Jalapeno import app 
+from Jalapeno.core import app 
 from Jalapeno.lib.fileMgr import Mgr 
 import os
-from Jalapeno.utils.configuration import config
-from Jalapeno.path import path
+from Jalapeno.utils.config import config
 
 
 
 
 views = config['views']
-
 
 for each in views:
 	print("Loading %s"%each)

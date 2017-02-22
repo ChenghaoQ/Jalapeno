@@ -2,7 +2,7 @@
 <html lang='en'>
     <head>
         <meta charset='utf-8'>
-        <title>{% block title %} {% endblock %}|| {{prof.Name}}</title>
+        <title>{% block title %} {% endblock %}|| {{Jalo.Name}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel='stylesheet' href='{{asset.css.normalize}}'>
 		<link rel='stylesheet' href="{{asset.css.mono}}">
@@ -24,7 +24,7 @@
            <div class="mask"></div>
             <header>
                 <nav>
-                    <div class="logo"><a href="{{url_for('posts.postwall')}}">{{prof.Name}}</a></div>
+                    <div class="logo"><a href="{{url_for('posts.postwall')}}">{{Jalo.Name}}</a></div>
                     <button class="menu_trigger">☰</button>
                     <ul class="menu">
                         
@@ -55,7 +55,7 @@
                     <li><a href="#">item</a></li>--> 
                 </ul>   
                 <div class="copyright">
-                    &copy {{prof.copyright}};
+                    &copy {{Jalo.copyright}};
                 </div>
 
             </footer>
@@ -101,15 +101,15 @@
                         <div class="selfie"><img src='{{image.theme.Selfie}}'</div>
                         <div class="site-view-info">
                          
-                            <p class="motto">{{prof.Motto}}</p>
+                            <p class="motto">{{Jalo.Motto}}</p>
                 
-                            <h3 class="myself">{{prof.Name}}</h3>
+                            <h3 class="myself">{{Jalo.Name}}</h3>
                             
                             <ul class="posts-info">
                             </ul>
                             <div class="extern-links">
                                <ul>
-                                   <li><a href="{{prof.Github}}">Github</a></li>
+                                   <li><a href="{{Jalo.Github}}">Github</a></li>
                                <li><a>Wechat</a></li>            
                                </ul>
      

@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template,request
-from Jalapeno import app 
-from Jalapeno.utils.configuration import config
+from Jalapeno.utils.config import config
 from Jalapeno.lib.selector import view_register,get_template
 
 page = Blueprint('page',__name__)

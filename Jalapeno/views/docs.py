@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from Jalapeno.utils.flatpage import sitepages
 from flask import request
-from Jalapeno.utils.configuration import config
+from Jalapeno.utils.config import config
 from Jalapeno.lib.selector import flatpage_filter,view_register,get_template
 
 

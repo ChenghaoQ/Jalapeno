@@ -1,8 +1,6 @@
-
 from flask import Blueprint, render_template,request
 from Jalapeno.utils.flatpage import sitepages
-from Jalapeno import app
-from Jalapeno.utils.configuration import config
+from Jalapeno.utils.config import config
 from Jalapeno.lib import pagination as Pag
 from Jalapeno.lib.selector import flatpage_filter,view_register,get_template
 tags = Blueprint('tags',__name__)

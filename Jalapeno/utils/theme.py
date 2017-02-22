@@ -1,8 +1,8 @@
 import os
 from Jalapeno.lib import themeMgr
-from Jalapeno import app
+from Jalapeno.core import app
 from flask import url_for
-from Jalapeno.utils.configuration import config
+from Jalapeno.utils.config import config
 '''
 	This file is going to manage the theme
 	get the templates and static

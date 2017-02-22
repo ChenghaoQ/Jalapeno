@@ -1,12 +1,12 @@
 import os
-from Jalapeno.path import path
+from Jalapeno.path import APP_DIR
 
 '''
         This file is build for future post-installation parts
         Help user get a shortcut at user's home dir
 '''
-subdir = ['source','build','Profile']
-source = path()+os.sep+'Jalapeno'
+subdir = ['source','build','_config','Pages']
+source = APP_DIR+os.sep+'Jalapeno'
 home = os.path.expanduser("~")
 base = home+os.sep+'Jalapeno'
 
