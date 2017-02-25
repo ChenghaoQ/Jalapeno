@@ -3,10 +3,10 @@ from Jalapeno.core import app
 import os
 from Jalapeno.utils.config import config
 from Jalapeno.lib.jalop_markdown import Jalop_markdown
-from Jalapeno.path import APP_DIR
+from Jalapeno.path import APP_DIR,SITE_DIR
 
 
-flatpage_source = APP_DIR+os.sep+'Jalapeno'+os.sep+'Pages'
+flatpage_source = SITE_DIR+os.sep+'Pages'
 
 
 sitepages = {}

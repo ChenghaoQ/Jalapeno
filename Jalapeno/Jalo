@@ -4,6 +4,7 @@ from Jalapeno.GUI import gui
 import webbrowser
 import multiprocessing,threading
 import time
+import
 
 a= 1
 print('Here is Jalo')
@@ -16,12 +17,14 @@ def redirect_thread():
 	
 def main():
 	try:
-		gui_proc = multiprocessing.Process(target=gui_run)
-		gui_proc.start()
-		launcher = threading.Thread(target=redirect_thread)
-		launcher.start()
-		launcher.join()
-		gui_proc.join()
+		# gui_proc = multiprocessing.Process(target=gui_run)
+		# gui_proc.start()
+		# launcher = threading.Thread(target=redirect_thread)
+		# launcher.start()
+		# launcher.join()
+		# gui_proc.join()
+		procs['FREEZER'].start()
+		procs['FREEZER'].join()
 	except:
 		launcher.join()
 		gui_proc.join()
