@@ -24,6 +24,7 @@ gui.static_folder = GUI_DIR+os.sep+'static'
 #-----------------------------Engine Parts----------------------------------
 def gui_starter(listener):
 	gui.config['carrier'] = listener
+	print(gui.config)
 	gui.run(port=5588)
 
 

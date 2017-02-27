@@ -28,5 +28,10 @@ for each in modules:
 
 
 #---------------Engine parts----------------------
-events['APP']=Event('APP','Proc',lambda x:app.run(debug = True,port = 9999))
-events['FREEZE'] = Event('FREEZE','Thread',lambda x:freezer.freeze())
+def app_starter(listener):
+	app.run(host='0.0.0.0',port = 9999,use_reloader=False)#use reloader prevent flask spinning two instance
+	
+def freezer_starter(listener):
+	freezer.freeze()
+events['APP']=Event('APP','Proc',app_starter)
+events['FREEZE'] = Event('FREEZE','Thread',freezer_starter)

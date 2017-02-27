@@ -15,7 +15,7 @@ class eventEngine():
 
 	def __Run(self):
 		while self.__active:
-			print('ALive')
+			print('Engine is ALive...\b')
 			try:
 				command = self.__commander.get(block=True,timeout=1)
 				self.__response[command]()
@@ -45,7 +45,7 @@ class eventEngine():
 
 	def Stop(self):
 		self.__active = False
-		for each in self.__threads.values()+self.__procs.values():
+		for each in list(self.__threads.values())+list(self.__procs.values()):
 			try:
 				each.terminate()
 				each.join()
@@ -57,7 +57,7 @@ class eventEngine():
 	def Listen(self,command=None,event=None):
 		if command:
 			self.__commander.put(command)
-		if not event:
+		if event:
 			self.__eventQueue.put(event)
 
 
