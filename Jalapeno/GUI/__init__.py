@@ -6,7 +6,7 @@ from Jalapeno.Globalvar import *
 # this module running under GUI process, so other same level process cannot get started
 from multiprocessing import Process
 from Jalapeno.core import app,freezer
-
+from Jalapeno.Globalvar import events,Event
 import os
 
 
@@ -18,7 +18,21 @@ GUI_DIR = APP_DIR+os.sep+'Jalapeno'+os.sep+'GUI'
 gui.template_folder =GUI_DIR+os.sep+'templates'
 gui.static_folder = GUI_DIR+os.sep+'static'
 
-procs['GUI'] = Process(target = lambda:gui.run(port=5588))
+
+
+
+#-----------------------------Engine Parts----------------------------------
+def gui_starter(listener):
+	gui.config['carrier'] = listener
+	gui.run(port=5588)
+
+
+
+events['GUI']=Event('GUI','Proc',gui_starter)
+
+
+
+#-----------------------------View Parts----------------------------------
 @gui.route('/')
 def home():
 	global assets
@@ -35,16 +49,12 @@ def redir():
 
 @gui.route('/run')
 def runner():
-	procs['APP'] = Process(target = lambda:app.run(debug = True,port = 9999))
-	procs['APP'].start()
+	gui.config['carrier'](event = events['APP'])
 	return '123'
 	
 @gui.route('/freeze')
 def freeze():
-
-	procs['FREEZER'] = Process(target = lambda:Jalapeno.core.freezer.freeze())
-	procs['FREEZER'].start()
-	procs['FREEZER'].join()
+	gui.config['carrier'](event = events['FREEZE'])
 	return redirect(url_for('home'))
 	
 
@@ -66,13 +76,7 @@ def exit_proc():
 	try:
 		return 'Goodbye'
 	finally:
-		try:
-			procs['APP'].terminate()
-			procs['APP'].join()
-
-		except:
-			print(procs)
-			sys.exit()
+		gui.config['carrier'](command = 'Stop')
 	
 @gui.route('/version')
 def ver():

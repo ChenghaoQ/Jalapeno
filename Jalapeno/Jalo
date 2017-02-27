@@ -1,15 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-from Jalapeno.GUI import gui
-import webbrowser
-import multiprocessing,threading
-import time
-import
 
-a= 1
-print('Here is Jalo')
-def gui_run():
-	gui.run(port=5588)
+import webbrowser
+import Jalapeno.GUI
+from Jalapeno.Globalvar import events,Event,engine
 
 def redirect_thread():
 	webbrowser.open('http://127.0.0.1:5588/redirect')
@@ -17,17 +11,10 @@ def redirect_thread():
 	
 def main():
 	try:
-		# gui_proc = multiprocessing.Process(target=gui_run)
-		# gui_proc.start()
-		# launcher = threading.Thread(target=redirect_thread)
-		# launcher.start()
-		# launcher.join()
-		# gui_proc.join()
-		procs['FREEZER'].start()
-		procs['FREEZER'].join()
+		engine.Listen(event=events['GUI'])
+		engine.Start()
 	except:
-		launcher.join()
-		gui_proc.join()
+		exit()
 	
 if __name__ =='__main__':
 	main()

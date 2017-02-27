@@ -1,5 +1,5 @@
 from Jalapeno.core import app
-
+from Jalapeno.lib.jalop_markdown import Jalop_markdown
 
 @app.template_filter('excerpt')
 def excerpt_spliter(article):
@@ -24,7 +24,10 @@ def content_spliter(article):
 	
 
 
-
+@app.template_filter('Jalomark')
+def content_spliter(article):
+    
+    return Jalop_markdown(article)
 
 
 

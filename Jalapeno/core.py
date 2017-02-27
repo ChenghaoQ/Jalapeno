@@ -1,5 +1,5 @@
 from flask import Flask
-from Jalapeno.Globalvar import *
+from Jalapeno.Globalvar import events,Event
 app = Flask(__name__)
 
 
@@ -26,5 +26,7 @@ for each in modules:
 		print("Loading %s Error,Exit"%each[1])
 		exit()
 
-procs['APP'] = Process(target = lambda:app.run(debug = True,port = 9999))
-procs['FREEZER'] = Process(target = lambda:freezer.freeze())
+
+#---------------Engine parts----------------------
+events['APP']=Event('APP','Proc',lambda x:app.run(debug = True,port = 9999))
+events['FREEZE'] = Event('FREEZE','Thread',lambda x:freezer.freeze())

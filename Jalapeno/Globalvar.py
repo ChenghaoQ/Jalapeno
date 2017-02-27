@@ -1,3 +1,4 @@
-from multiprocessing import Process
+from Jalapeno.lib.eventEngine import *
 
-procs = {'GUI':None,'APP':None,'FREEZER':None}
+engine = eventEngine()
+events = {}
