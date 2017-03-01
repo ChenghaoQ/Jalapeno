@@ -1,5 +1,9 @@
 import os
-from Jalapeno.path import APP_DIR
+import pickle
+
+
+APP_DIR = os.path.join(os.path.join(os.path.dirname(__file__),os.path.pardir),os.path.pardir)
+SITES_FOLDER = APP_DIR+os.sep+'Jalapeno'+os.sep+'Sites'
 
 class Site():
 
@@ -35,5 +39,41 @@ class Site():
 
 		else:
 			pass
+	@staticmethod
+	def site_switch(sitename):
+		g=open(SITES_FOLDER+os.sep+'.siterc','rb')
+		sitelist,site = pickle.load(g)
+		if sitename not in sitelist:
+			print('Site not exist')
+			return
+		f = open(SITES_FOLDER+os.sep+'.siterc','wb')
+		pickle.dump((sitename,sitelist),f)
+		f.close()
+		print("Current site is '%s'"%sitename)
+	@staticmethod
+	def site_list_add(sitename):
+		try:
+			g=open(SITES_FOLDER+os.sep+'.siterc','rb')
+			sitelist,site = pickle.load(g)
+			sitelist.append(sitename)
+			g.close()
+		except:
+			print('site_list_add Wrong')
+	@staticmethod
+	def get_site():
+		g=open(SITES_FOLDER+os.sep+'.siterc','rb')
+		sitelist,sitename = pickle.load(g)
+		if sitename not in sitelist:
+			print('Site not exist')
+			return
+		return sitename
+
+
+
+SITE_DIR=SITES_FOLDER+os.sep+Site.get_site()
+
+
+
+
 
 

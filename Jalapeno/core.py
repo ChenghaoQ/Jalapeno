@@ -1,5 +1,7 @@
 from flask import Flask
 from Jalapeno.Globalvar import events,Event
+
+import Jalapeno.path
 app = Flask(__name__)
 
 

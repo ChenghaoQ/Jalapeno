@@ -1,29 +1,23 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-import Jalapeno.GUI
 import webbrowser
-import time
-from Jalapeno.Globalvar import procs 
-import sys
+import Jalapeno.GUI
+from Jalapeno.Globalvar import events,Event,engine
+
 def redirect_thread():
 	webbrowser.open('http://127.0.0.1:5588/redirect')
 	time.sleep(1)
 	
 def main():
+	
 	try:
-		procs['GUI'].start()
-		redirect_thread()
-		# launcher = threading.Thread(target=redirect_thread)
-		# launcher.start()
-		# launcher.join()
-		# procs['FREEZER'].start()
-		# procs['FREEZER'].join()
-		procs['GUI'].join()
-		print(procs)
-		sys.exit()
+		engine.Listen(event=events['GUI'])
+		engine.Start()
+		
 	except:
-		sys.exit()
+		pass
 	
 if __name__ =='__main__':
 	main()
+	
 	
