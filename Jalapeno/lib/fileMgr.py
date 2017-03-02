@@ -43,6 +43,7 @@ class Mgr(object):
                 if not dirs:dirs = self.tree_dict()
                 for k,v in dirs.items():
                         if isinstance(v,dict):
+                                print(k,v,'+++++++')
                                 hold = self.target(target,key=k,dirs=v)
                                 if hold:return hold 
                         elif relative:
