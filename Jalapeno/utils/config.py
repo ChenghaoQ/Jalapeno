@@ -20,7 +20,7 @@ app.config.from_pyfile(config_flatpage+os.sep+'flask_settings.py')
 
 #load profile
 profile_path = SITE_DIR+os.sep+'_config'+os.sep+'profile.yaml'
-config['Jalo'] = yaml.load(open(profile_path,'r').read())
+config['Jalo'] = yaml.load(open(profile_path,'r', encoding='utf8').read())
 
 
 @app.context_processor

@@ -8,6 +8,7 @@ from multiprocessing import Process
 from Jalapeno.core import app,freezer
 from Jalapeno.Globalvar import events,Event
 import os
+from sys import exit
 
 
 assets ={}
@@ -51,7 +52,7 @@ def redir():
 @gui.route('/run')
 def runner():
 	gui.config['carrier'](event = events['APP'])
-	return '123'
+	return redirect(url_for('home'))
 	
 @gui.route('/freeze')
 def freeze():
@@ -62,7 +63,7 @@ def freeze():
 @gui.route('/shortcut')
 def shortcut():
 	Jalapeno.lib.shortcuts.create_shortcuts()
-	
+	return redirect(url_for('home'))
 @gui.route('/help')
 def help_session():
 	return 'help'

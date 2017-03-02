@@ -7,17 +7,20 @@ import os
 	get the templates and static
 	push static dict to asset
 '''
+
+APP_DIR = os.path.join(os.path.join(os.path.dirname(__file__),os.path.pardir),os.path.pardir)
 theme = 'default'
-theme_path = path()+os.sep+'Jalapeno'+os.sep+'theme'+os.sep+theme
+data_path=APP_DIR+os.sep+'Jalapeno'
+theme_path = data_path+os.sep+'theme'+os.sep+theme
 
-
+ 
 class Theme(Mgr):
 
 	def __init__(self,theme_name):
 		self.name = theme_name
-		self.theme_relative = 'theme'+os.sep+self.theme()
-		self.theme_path = path()+os.sep+'Jalapeno'+os.sep+ self.theme_relative
-		Mgr.__init__(self,self.path())
+		self.theme_relative = data_path+os.sep+'theme'+os.sep+self.theme()
+		self.theme_path = data_path+os.sep+ self.theme_relative
+		Mgr.__init__(self,data_path)
 
 	def theme(self):
 		return self.name

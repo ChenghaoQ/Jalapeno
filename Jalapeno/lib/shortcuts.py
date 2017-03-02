@@ -5,21 +5,19 @@ from Jalapeno.path import APP_DIR
         This file is build for future post-installation parts
         Help user get a shortcut at user's home dir
 '''
-subdir = ['source','build','_config','Pages']
+subdir = ['Sites']
 source = APP_DIR+os.sep+'Jalapeno'
 home = os.path.expanduser("~")
-base = home+os.sep+'Jalapeno'
+base = home+os.sep+'Jalo'
 
 
 def create_shortcuts():
-	# source = path()+os.sep+'Jalapeno'
-	# home = os.path.expanduser("~")
-	# base = home+os.sep+'Jalapeno'
+
 	
-	if os.path.exists(base):
-		pass
-	else:
-		os.makedirs(base)
+	# if os.path.exists(base):
+	# 	pass
+	# else:
+	# 	os.makedirs(base)
 
 	#subdir = ['pages','build','Profile']
 	
@@ -27,11 +25,11 @@ def create_shortcuts():
 		try:
 			dir_source = source+os.sep+each
 
-			dir_target = base+os.sep+each
+			dir_target = base
+			print(dir_target)
 			os.symlink(dir_source,dir_target)
-		except:
+		except FileExistsError:
 			print("You've already got %s ;)"%each)
-	
 
 def change_mod():
 	for each in subdir:

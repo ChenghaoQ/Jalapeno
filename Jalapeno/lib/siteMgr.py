@@ -47,7 +47,7 @@ class Site():
 			print('Site not exist')
 			return
 		f = open(SITES_FOLDER+os.sep+'.siterc','wb')
-		pickle.dump((sitename,sitelist),f)
+		pickle.dump((sitelist,sitename),f)
 		f.close()
 		print("Current site is '%s'"%sitename)
 	@staticmethod
@@ -59,6 +59,7 @@ class Site():
 			g.close()
 		except:
 			print('site_list_add Wrong')
+	
 	@staticmethod
 	def get_site():
 		g=open(SITES_FOLDER+os.sep+'.siterc','rb')
