@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+import webbrowser
+import Jalapeno.GUI
+from Jalapeno.Globalvar import events,Event,engine
+
+def redirect_thread():
+	print('55555')
+	webbrowser.open('http://127.0.0.1:5588/redirect')
+	time.sleep(1)
+events['Browse']=Event('Browse','Thread',redirect_thread)
+def main():
+	
+	try:
+		engine.Listen(event=events['GUI'])
+		engine.Listen(event=events['Browse'])
+		engine.Start()
+		
+	except:
+		pass
+	
+if __name__ =='__main__':
+	main()
+	
+	
