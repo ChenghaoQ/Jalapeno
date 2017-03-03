@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 from sys import argv
-
+from sys import exit
 from Jalapeno.lib import shortcuts
 from Jalapeno.path import path
 from Jalapeno.lib.siteMgr import Site

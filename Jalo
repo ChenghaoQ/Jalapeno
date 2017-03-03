@@ -3,11 +3,12 @@
 import webbrowser
 import Jalapeno.GUI
 from Jalapeno.Globalvar import events,Event,engine
-
-def redirect_thread():
-	webbrowser.open('http://127.0.0.1:5588/redirect')
-	time.sleep(1)
-	
+from sys import exit
+import time
+def browser_start(website='http://127.0.0.1:5588/redirect'):
+	webbrowser.open(website)
+events['Browse']=Event('Browse','Thread',browser_start)
+engine.Listen(event=events['Browse'])
 def main():
 	
 	try:

@@ -22,16 +22,23 @@
 	
 	<body>
 		
-		<div class="main-page"></div>
+		<div class="main-page">
+			
+			<div id = "display">
+				
+
+			</div>
+
+		</div>
 		<div class="sidebar">
-			<h1><a href ="{{url_for('home')}}">Jalapeno</a></h1>
+			<h1><a id = home>Jalapeno</a></h1>
 			<ul class="cardgroup container-fluid">
 				<li class="row">
-					<div class="card col-xs-6"><a href="{{url_for('runner')}}">Run</a></div>
-					<div class="card col-xs-6"><a href="{{url_for('freeze')}}">Freeze</a></div>
+					<div id = runner class="card col-xs-6"><a href="{{url_for('runner')}}">Run</a></div>
+					<div id = freeze class="card col-xs-6"><a href="{{url_for('freeze')}}">Freeze</a></div>
 				</li>
 				<li class="row">
-					<div class="card col-xs-6"><a href="{{url_for('shortcut')}}">ShortCuts</a></div>
+					<div id = shortcut class="card col-xs-6"><a href="{{url_for('shortcut')}}">ShortCuts</a></div>
 					<div class="card col-xs-6"><a href="#">unlock</a></div>					
 				</li>
 				<li class="row">
@@ -44,6 +51,14 @@
 			</ul>
 
 		</div>
+s
+		<script type="text/javascript">
+			$("#home").click(function(){
+				  $("#display").load("/help");
+
+				});
+
+		</script>
 	</body>
 	
 	

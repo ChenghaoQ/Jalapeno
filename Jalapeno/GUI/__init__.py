@@ -67,7 +67,7 @@ def shortcut():
 	return redirect(url_for('home'))
 @gui.route('/help')
 def help_session():
-	return 'help'
+	return render_template('welcome.html')
 
 # @gui.route('/unlock')
 # def unlock():
