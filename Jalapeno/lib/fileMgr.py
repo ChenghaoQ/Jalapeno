@@ -31,7 +31,8 @@ class Mgr(object):
                         else:
                                 L[each.split('.',1)[0]] = relative_path+each
                 return L
-        def target(self,target,dirs=None,key='',relative=True):
+        @staticmethod
+        def target(tar,dirs=None,key='',relative=True):
                 '''
                         find and return a specific file dict by name under root path
                         target: specific dir name
@@ -40,19 +41,18 @@ class Mgr(object):
                                 False: relative path
                                 None: Nothing change
                 '''
-                if not dirs:dirs = self.tree_dict()
                 for k,v in dirs.items():
                         if isinstance(v,dict):
-                                print(k,v,'+++++++')
-                                hold = self.target(target,key=k,dirs=v)
+
+                                hold = Mgr.target(tar,key=k,dirs=v)
                                 if hold:return hold 
                         elif relative:
-                                dirs[k]=dirs[k].split(target+os.sep,1)[-1]
+                                dirs[k]=dirs[k].split(tar+os.sep,1)[-1]
                         else:
                                 pass
                                 #relative = dirs[k].split(target+os.sep,1)[-1]
                                 #dirs[k] = url_for('static',filename=relative)
-                return dirs if key == target else None
+                return dirs if key == tar else None
 
         def url_builder(self,dicts):
                 for k,v in dicts.items():

@@ -52,8 +52,7 @@ def redir():
 @gui.route('/run')
 def runner():
 	gui.config['carrier'](event = events['APP'])
-	events['Browse_run']=Event('Browse_run','Thread',browser_start(website='http://127.0.0.1:9999'))
-	gui.config['Browse_run']
+	browser_start('http://127.0.0.1:9999')()
 	return redirect(url_for('home'))
 	
 @gui.route('/freeze')

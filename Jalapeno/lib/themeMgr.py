@@ -20,7 +20,7 @@ class Theme(Mgr):
 		self.name = theme_name
 		self.theme_relative = data_path+os.sep+'theme'+os.sep+self.theme()
 		self.theme_path = data_path+os.sep+ self.theme_relative
-		Mgr.__init__(self,data_path)
+		Mgr.__init__(self,theme_path)
 
 	def theme(self):
 		return self.name
@@ -38,10 +38,11 @@ class Theme(Mgr):
 		return self.relative()+os.sep+'templates'
 
 	def theme_file(self):
+
 		return self.tree_dict()
 
 	def static_files(self):
-		return self.target('static')
+		return self.target('static',dirs=self.theme_file())
 
 	def static_url_for(self):
 		return self.url_builder(self.static_files())
