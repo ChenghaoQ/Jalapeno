@@ -54,13 +54,14 @@ class Mgr(object):
                                 #dirs[k] = url_for('static',filename=relative)
                 return dirs if key == tar else None
 
-        def url_builder(self,dicts):
+        @staticmethod
+        def url_builder(endpoint,dicts):
                 for k,v in dicts.items():
                         if isinstance(v,dict):
-                                self.url_builder(v)
+                                Mgr.url_builder(endpoint,v)
                         else:
                                 
-                                dicts[k] = url_for('static',filename=v)
+                                dicts[k] = url_for(endpoint,filename=v)
                                  
                 return dicts
 

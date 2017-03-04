@@ -3,11 +3,11 @@
 	<head>
     <meta charset="UTF-8">
     <title>Jquery Ajax Test</title>
-	<link rel='stylesheet' href='{{asset.bootstrap}}'>
-	<link rel='stylesheet' href='{{asset.home}}'>
-	<script src="{{asset.jquery}}"></script>
-	<script src="{{asset.bootstrapjs}}"></script>
-	<script src="{{asset.homejs}}"></script>
+	<link rel='stylesheet' href='{{gui.css.bootstrap}}'>
+	<link rel='stylesheet' href='{{gui.css.home}}'>
+	<script src="{{gui.js.jquery}}"></script>
+	<script src="{{gui.js.bootstrap}}"></script>
+	<script src="{{gui.js.home}}"></script>
 	<script>   
 	  var new_width=280; //你要固定的浏览器宽度
 	  var new_height=648; //你要固定的浏览器高度
@@ -25,7 +25,7 @@
 		<div class="main-page">
 			
 			<div id = "display">
-				
+				<h2>test</h2>
 
 			</div>
 
@@ -54,8 +54,8 @@
 s
 		<script type="text/javascript">
 			$("#home").click(function(){
-				  $("#display").load("/help");
-
+				  $("#display").load("/welcome");
+					 $(this).trigger("pagecreate");
 				});
 
 		</script>

@@ -9,18 +9,21 @@ import os
 '''
 
 APP_DIR = os.path.join(os.path.join(os.path.dirname(__file__),os.path.pardir),os.path.pardir)
-theme = 'default'
+
 data_path=APP_DIR+os.sep+'Jalapeno'
-theme_path = data_path+os.sep+'theme'+os.sep+theme
+
 
  
 class Theme(Mgr):
 
 	def __init__(self,theme_name):
 		self.name = theme_name
-		self.theme_relative = data_path+os.sep+'theme'+os.sep+self.theme()
+		if theme_name != 'GUI':
+			self.theme_relative = data_path+os.sep+'theme'+os.sep+self.theme()
+		else:
+			self.theme_relative = data_path+os.sep+'GUI'
 		self.theme_path = data_path+os.sep+ self.theme_relative
-		Mgr.__init__(self,theme_path)
+		Mgr.__init__(self,self.theme_relative)
 
 	def theme(self):
 		return self.name
@@ -45,7 +48,7 @@ class Theme(Mgr):
 		return self.target('static',dirs=self.theme_file())
 
 	def static_url_for(self):
-		return self.url_builder(self.static_files())
+		return self.url_builder('static',self.static_files())
 
 
 

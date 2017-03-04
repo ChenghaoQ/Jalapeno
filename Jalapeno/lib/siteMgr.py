@@ -36,6 +36,9 @@ class Site():
 			for each in subdir['_config']:
 				f = open(config_folder+each,'w')
 				f.close()
+			f = open(config_folder+'flask_settings.py','w')
+			f.write(temp())
+			f.close()
 
 		else:
 			pass
@@ -45,11 +48,12 @@ class Site():
 		sitelist,site = pickle.load(g)
 		if sitename not in sitelist:
 			print('Site not exist')
-			return
+			return False
 		f = open(SITES_FOLDER+os.sep+'.siterc','wb')
 		pickle.dump((sitelist,sitename),f)
 		f.close()
 		print("Current site is '%s'"%sitename)
+		return True
 	@staticmethod
 	def site_list_add(sitename):
 		try:
@@ -73,8 +77,30 @@ class Site():
 
 SITE_DIR=SITES_FOLDER+os.sep+Site.get_site()
 
+def temp():
+
+	temp = '''
+
+import os
+from Jalapeno.path import SITE_DIR
+from Jalapeno.lib.jalop_markdown import Jalop_markdown
 
 
+DEBUG = True
+THREADED = True
 
+IMAGE_DIR = SITE_DIR+os.sep+'source'+os.sep+'image'
+JS_EXTENSION_DIR = SITE_DIR+os.sep+'source'+os.sep+'extension'
+
+def parent_dir(path):
+	return os.path.abspath(os.path.join(path,os.pardir))
+
+PROJECT_ROOT = SITE_DIR+os.sep+'build'
+
+FREEZER_DESTINATION = PROJECT_ROOT
+
+FREEZER_REMOVE_EXTRA_FILES = False
+'''
+	return temp
 
 

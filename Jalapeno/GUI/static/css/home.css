@@ -1,8 +1,10 @@
-
-.main-page
+html,body
 {
+	height:100%;
 	margin:0;
+	width:100%;
 }
+
 
 .sidebar
 {
@@ -14,6 +16,7 @@
 	bottom:0;
 	left:0px;
 	color:wheat;
+	overflow-y: scroll;
 	
 }
 .sidebar h1
@@ -48,9 +51,12 @@ a:hover
 	color:azure;
 }
 .main-page {
-    margin-left: 280px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+	margin: 0 auto 0 280px;
+	height:100%;
+	
+}
+#display
+{
+	width:inherit;
+	height:100%;
 }

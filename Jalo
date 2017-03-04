@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 import webbrowser
-import Jalapeno.GUI
+import Jalapeno.GUI.G
 from Jalapeno.Globalvar import events,Event,engine
 from sys import exit
 import time
-def browser_start(website='http://127.0.0.1:5588/redirect'):
-	webbrowser.open(website)
-events['Browse']=Event('Browse','Thread',browser_start)
-engine.Listen(event=events['Browse'])
+
+
+
 def main():
 	
 	try:
 		engine.Listen(event=events['GUI'])
+		engine.Listen(event=events['Browse'])
 		engine.Start()
 		
 	except:
