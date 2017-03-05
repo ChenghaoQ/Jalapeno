@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+import os
+print("Jalo is here",os.getcwd())
+
+import webbrowser
+import Jalapeno.GUI.G
+from Jalapeno.Globalvar import events,Event,engine
+from sys import exit
+import time
+from Jalapeno import *
+
+
+def main():
+	
+	try:
+		engine.Listen(event=events['GUI'])
+		engine.Listen(event=events['Browse'])
+		engine.Start()
+		
+	except:
+		pass
+	
+if __name__ =='__main__':
+	main()
+	
+	
