@@ -10,7 +10,7 @@ html,body
 {
 	background:#222;
 	background-color:rgba(0,0,0,0.8);
-	width:280px;
+	width:250px;
 	position:fixed;
 	top:0px;
 	bottom:0;
@@ -29,16 +29,18 @@ html,body
 }
 .card
 {
-	height:150px;
+	height:50px;
 	color:white;
+	list-style: none;
 }
 .card a
 {
 	height:inherit;
-	width:inherit;
 	display:block;
-	padding:60px 30px;
 	vertical-align: middle;
+	font-size: 20px;
+	padding:15px 0 10px;
+	display: block;
 	
 }
 a
@@ -51,7 +53,7 @@ a:hover
 	color:azure;
 }
 .main-page {
-	margin: 0 auto 0 280px;
+	margin: 0 auto 0 250px;
 	height:100%;
 	
 }

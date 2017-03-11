@@ -1,28 +1,15 @@
-#!/usr/bin/python3
-# -*- coding: UTF-8 -*-
+
 from setuptools import setup
 
+APP = ['Jalo']
+DATA_FILES = []
+OPTIONS = dict(packages=['Jalapeno','Jalapeno_data','flask','markdown','pygments','jinja2','flask_flatpages'],
+				iconfile='Jalo.icns')
+
 setup(
-	name='Jalapeno',
-	version='0.1.3',
-	author='Chenghao Qian',
-	author_email='qch.jacob.jm@gmail.com',
-	include_package_data=True,
-	packages=['Jalapeno',
-				'Jalapeno.lib',
-				'Jalapeno.utils',
-				'Jalapeno.views',
-				'Jalapeno.GUI'
-				],
-	scripts=['Jaloc','Jalo'],
-	url='https://github.com/ChenghaoQ/Jalapeno',
-	license='GPL',
-	description='Static Site Generator based on Flask',
-	keywords= ['Flask','Blog','site Generator','static site'],
-	install_requires=['Markdown >= 2.6.6',
-						'Flask >= 0.10.1',
-						'Pygments >= 2.1.3 ',
-						'MarkupSafe >= 0.23',
-						'Flask-FlatPages >= 0.6',
-						'Frozen-Flask >= 0.12' ]
+    app=APP,
+    data_files=DATA_FILES,
+    options={'py2app': OPTIONS},
+    setup_requires=['py2app'],
+
 )

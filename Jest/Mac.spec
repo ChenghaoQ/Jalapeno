@@ -33,7 +33,8 @@ exe = BUNDLE(pyz,
           strip=False,
           upx=True,
           console=False,
-	  manifest='MANIFEST.in'
+	  manifest='MANIFEST.in',
+          icons= 'Jalo.icns'
 	)
 coll = COLLECT(exe,
                a.binaries,
