@@ -6,7 +6,7 @@ html,body
 }
 
 
-.sidebar
+#sidebar
 {
 	background:#222;
 	background-color:rgba(0,0,0,0.8);
@@ -17,9 +17,9 @@ html,body
 	left:0px;
 	color:wheat;
 	overflow-y: scroll;
-	
+	overflow-x: hidden;
 }
-.sidebar h1
+#sidebar h1
 {
 	text-align: center;
 }
@@ -27,21 +27,26 @@ html,body
 {
 	width:inherit;
 }
-.card
+.cardgroup li
 {
 	height:50px;
 	color:white;
 	list-style: none;
 }
-.card a
+.cardgroup li a
 {
 	height:inherit;
 	display:block;
 	vertical-align: middle;
-	font-size: 20px;
+	font-size: 18px;
 	padding:15px 0 10px;
 	display: block;
 	
+}
+#Preview,#Stop
+{
+	display:none;
+
 }
 a
 {
@@ -52,7 +57,7 @@ a:hover
 	text-decoration: none;
 	color:azure;
 }
-.main-page {
+#main-page {
 	margin: 0 auto 0 250px;
 	height:100%;
 	
@@ -61,4 +66,51 @@ a:hover
 {
 	width:inherit;
 	height:100%;
+}
+
+iframe
+{
+	width:100%;
+	height:inherit;
+	border:none;
+}
+
+
+/* ------------------ Scroll Bar ----------------------------
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(150,150,150,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,0.4); 
+}
+
+
+
+
+
+
+#sidebar-trigger
+{
+	position: fixed;
+    bottom: 50px;
+    left: 105px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
 }

@@ -30,7 +30,7 @@
 		<script type="text/javascript">
 			$("#createsite").click(function(){
 					var sitename = prompt("Please enter new Site name:");
-					$.post("sites/site-create",sitename);
+					$.post("/sites/site-create",sitename);
 				
 				});
 			$("#switchsite").click(function(){

@@ -11,7 +11,7 @@ from Jalapeno.core import app,freezer
 from Jalapeno.Globalvar import events,Event
 import os
 from sys import exit
-
+from flask_cors import CORS, cross_origin
 
 
 
@@ -20,15 +20,19 @@ GUI_DIR = APP_DIR+os.sep+'Jalapeno'+os.sep+'GUI'
 gui.template_folder =GUI_DIR+os.sep+'templates'
 gui.static_folder = GUI_DIR+os.sep+'static'
 
+
+
+
 #-----------------------------Assets register----------------------------------
 import Jalapeno.GUI.Gutils.gtheme
 
 
 #-----------------------------views register----------------------------------
 
-from Jalapeno.GUI.views import welcome,sites
+from Jalapeno.GUI.views import welcome,sites,run
 gui.register_blueprint(welcome.welcome)
 gui.register_blueprint(sites.sites)
+gui.register_blueprint(run.run)
 #-----------------------------Engine Parts----------------------------------
 def gui_starter(listener):
 	gui.config['carrier'] = listener
@@ -41,23 +45,15 @@ events['GUI']=Event('GUI','Proc',gui_starter)
 
 
 #-----------------------------View Parts----------------------------------
-@gui.route('/')
+@gui.route('/', methods=['GET','POST'])
+@cross_origin(origins='*')
 def home():
 
 
 	return render_template('homee.html')
 
-#@gui.route('/welcome')
-#def welcome():
-#	return render_template('welcome.html')
 
-@gui.route('/run')
-def runner():
-	gui.config['carrier'](event = events['APP'])
-	gui.config['carrier'](event = events['Browse_Run'])
-#	browser_start('http://127.0.0.1:9999')()
-	return redirect(url_for('home'))
-	
+
 @gui.route('/freeze')
 def freeze():
 	gui.config['carrier'](event = events['FREEZE'])

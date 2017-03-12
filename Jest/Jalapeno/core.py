@@ -2,23 +2,12 @@ from flask import Flask
 from Jalapeno.Globalvar import events,Event
 from sys import exit
 import Jalapeno.path
-app = Flask(__name__)
 import yaml
 
 
-#modules =(
-##		  ['Jalapeno.utils','config'],
-#		  ['Jalapeno.utils.flatpage','sitepages'],
-##		  ['Jalapeno.utils','excerpt'],
-##		  ['Jalapeno.utils','theme'],
-##		  ['Jalapeno.utils','viewer'],
-#		  ['Jalapeno.lib','shortcuts'],
-##		  ['Jalapeno.utils','imageMgr'],
-#		  ['Jalapeno.utils.flaskfroze','freezer'],
-##		  ['Jalapeno.utils','extension'],
-#		  ['Jalapeno.lib.siteMgr','Site']
-#		  
-#		   )
+app = Flask(__name__)
+
+
 from Jalapeno.utils import config,excerpt,theme,viewer,imageMgr,extension
 from Jalapeno.utils.flatpage import sitepages
 from Jalapeno.lib import shortcuts

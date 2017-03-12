@@ -1,14 +1,19 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template,redirect,url_for,current_app as gui
+from Jalapeno.Globalvar import events
 
-welcome = Blueprint('welcome',__name__)
-
-
-
+run = Blueprint('run',__name__)
 
 
+@run.route('/run',methods =['GET','POST'])
+def runner():
+	gui.config['carrier'](event = events['APP'])
+	return redirect(url_for('home'))
 
 
 
-@welcome.route('/welcome')
-def show():
-	return render_template('welcome.html')
+
+
+@run.route('/run/preview')
+
+def runner_previewer():
+	return "<iframe src='http://127.0.0.1:9999/'></iframe>"

@@ -19,4 +19,3 @@ class browser_starter():
 
 
 events['Browse']=Event('Browse','Thread',browser_starter('http://127.0.0.1:5588/redirect'))
-events['Browse_Run']=Event('Browse','Thread',browser_starter('http://127.0.0.1:9999'))
