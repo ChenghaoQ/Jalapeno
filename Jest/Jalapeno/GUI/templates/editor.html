@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+    <title>Jquery Ajax Test</title>
+    <link rel='stylesheet' href='{{gui.css.bootstrap}}'>
+    <link rel='stylesheet' href='{{gui.css.mono}}'>
+    <script src= '{{gui.js.jquery}}'></script>
+    <style>
+    html,body,.editor-frame .row,.boxes
+    {
+    	height:100%;
+    }
+    .editor-frame
+    {
+    	padding:0;
+    	margin:0;
+    	width:inherit;
+    	height:inherit;
+    }
+    #editor,#display
+    {
+    	width:100%;
+    	height:100%;
+    }
+    .editor-box
+    {
+    	top:0;
+    	bottom:0;
+    	left:0;
+    	right:0;
+    	margin: 0 auto;
+/*    	position:fixed;
+    	width:80%;*/
+    }
+    </style>
+	
+
+
+	</head>
+	
+	
+	<body>
+	<div class="editor-frame container">
+		<div class = 'row'>
+		<div class="boxes editor-box col-xs-6">
+			<textarea id = "editor">
+				
+			</textarea>
+
+		</div>
+		<div class = "boxes col-xs-1"></div>
+		<div class="boxes col-xs-5">
+
+			<article id = "display">
+				
+			</article>
+
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		$('#editor')[0].addEventListener("keyup",function(){
+
+			var datas = $('#editor').val();
+			$.post('/touch/render',datas,function(data){
+				 $('#display').html(data);
+			});
+
+
+		});
+	</script>
+	</body>
+	
+	
+	
+</html>

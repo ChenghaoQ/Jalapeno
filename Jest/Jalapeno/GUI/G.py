@@ -11,7 +11,6 @@ from Jalapeno.core import app,freezer
 from Jalapeno.Globalvar import events,Event
 import os
 from sys import exit
-from flask_cors import CORS, cross_origin
 
 
 
@@ -29,10 +28,11 @@ import Jalapeno.GUI.Gutils.gtheme
 
 #-----------------------------views register----------------------------------
 
-from Jalapeno.GUI.views import welcome,sites,run
+from Jalapeno.GUI.views import welcome,sites,run,touch
 gui.register_blueprint(welcome.welcome)
 gui.register_blueprint(sites.sites)
 gui.register_blueprint(run.run)
+gui.register_blueprint(touch.touch)
 #-----------------------------Engine Parts----------------------------------
 def gui_starter(listener):
 	gui.config['carrier'] = listener
@@ -46,15 +46,14 @@ events['GUI']=Event('GUI','Proc',gui_starter)
 
 #-----------------------------View Parts----------------------------------
 @gui.route('/', methods=['GET','POST'])
-@cross_origin(origins='*')
 def home():
 
 
-	return render_template('homee.html')
+	return render_template('home.html')
 
 
 
-@gui.route('/freeze')
+@gui.route('/freeze', methods=['GET','POST'])
 def freeze():
 	gui.config['carrier'](event = events['FREEZE'])
 	return redirect(url_for('home'))
@@ -73,13 +72,17 @@ def help_session():
 # 	Jalapeno.shortcuts.change_mod()
 # 	return 'unlock success'
 #@gui.route('touch')   #Do it until the flask can get value from ajax
-@gui.route('/exit')
+@gui.route('/exit', methods=['GET','POST'])
 def exit_proc():
 	try:
 		return 'Goodbye'
 	finally:
 		gui.config['carrier'](command = 'Stop')
 	
+@gui.route('/bye', methods=['GET','POST'])
+def exitsbye():
+	return render_template('bye.html')
+
 @gui.route('/version')
 def ver():
 	

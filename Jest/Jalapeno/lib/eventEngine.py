@@ -33,8 +33,11 @@ class eventEngine():
 			self.__procs[event.name]=starter
 		elif event.type_ == "Thread":
 			starter = Thread(target = event.func)
-			self.__procs[event.name]=starter
+			self.__threads[event.name]=starter
 		starter.start()
+		if event.join == True:
+			self.__threads[event.name].join()
+			del self.__threads[event.name]
 		# if event.type_ in self.handlers:
 		# 	for handlers in self.__handlers[event.type_]:
 		# 		handler(event)
@@ -63,7 +66,36 @@ class eventEngine():
 
 class Event():
 
-	def __init__(self,name,type_,func):
+	def __init__(self,name,type_,func,join = False):
 		self.name = name
 		self.type_  = type_
 		self.func = func
+		if self.type_ == "Thread" or join == True:
+			self.join = True
+		else:
+			self.join = False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
