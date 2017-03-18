@@ -7,10 +7,12 @@ class eventEngine():
 	def __init__(self):
 		self.__eventQueue = Queue()
 		self.__commander = Queue()
-		self.__response ={'Stop':self.Stop}
+		self.__response ={'Stop':self.Stop,
+							'Killer':self.Killer}
 		self.__active = False
 		self.__threads = {}
 		self.__procs = {}
+		self.test = []
 		# self.__handlers = {}
 
 	def __Run(self):
@@ -18,7 +20,11 @@ class eventEngine():
 			print('Engine is ALive...\b')
 			try:
 				command = self.__commander.get(block=True,timeout=1)
-				self.__response[command]()
+				if command == 'Stop':
+					self.__response[command]()
+				elif command == 'Killer':
+					self.__response[command]('APP')
+
 			except Empty:
 				pass
 			try:
@@ -47,6 +53,7 @@ class eventEngine():
 		self.__Run()
 
 	def Stop(self):
+		print(self.__procs)
 		self.__active = False
 		for each in list(self.__threads.values())+list(self.__procs.values()):
 			try:
@@ -56,12 +63,18 @@ class eventEngine():
 				print(each.pid,"Terminate error")
 				each.join()
 				pass
-
-	def Listen(self,command=None,event=None):
+	def Killer(self,event_name):
+		
+		self.__procs[event_name].terminate()
+		self.__procs[event_name].join()
+		del self.__procs[event_name]
+	def Listen(self,command=None,event=None,kill=None):
 		if command:
 			self.__commander.put(command)
 		if event:
 			self.__eventQueue.put(event)
+		if kill:
+			self.__commander.put('Killer') #####
 
 
 class Event():

@@ -80,7 +80,13 @@
 				
 				setTimeout(function(){$("#display").load("/run/preview");},500);
 				});
-
+			$("#Stop").click(function(){
+				  $.post("/run/stop");
+				  $("#Preview").slideUp(300);
+				  $("#Stop").slideUp(300);
+				  $("#Run").slideDown(300);
+				  // $("#display").hide()
+				});
 			$("#Exit").click(function(){
 
 				$("#display").hide()

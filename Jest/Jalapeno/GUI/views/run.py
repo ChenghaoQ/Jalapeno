@@ -9,7 +9,10 @@ def runner():
 	gui.config['carrier'](event = events['APP'])
 	return redirect(url_for('home'))
 
-
+@run.route('/run/stop',methods =['GET','POST'])
+def stoper():
+	gui.config['carrier'](kill='APP')
+	return redirect(url_for('home'))
 
 
 

@@ -1,5 +1,6 @@
 from flask import Blueprint,render_template,request
-from Jalapeno.lib.jalop_markdown import Jalop_markdown
+from Jalapeno.lib.jalop_markdown import Jalo_render
+from Jalapeno.lib.siteMgr import Site,SITES_FOLDER
 touch = Blueprint('touch',__name__)
 
 
@@ -15,4 +16,4 @@ def editor():
 @touch.route('/touch/render',methods =['GET','POST'])
 def render():
 	data = request.get_data().decode()
-	return Jalop_markdown(data)
+	return Jalo_render(data)
