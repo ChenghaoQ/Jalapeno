@@ -211,17 +211,37 @@
 	</div>
 	<script type="text/javascript">
 		
-		$("#editor-save").click(function(){
-			var textareas = document.getElementsByTagName('textarea');
-			var name = document.getElementsById('doc-name');
-			var type = document.getElementsById('doc-type');
+		$("#editor-Save").click(function(){
+			var datas = $('#editor').val();
+			var name = $('#doc-name').val();
+			var type = $('#doc-type').val();
+
+			});
+		$("#editor-Open").click(function(){
+			var name = $('#doc-name').val();
+			var type = $('#doc-type').val();
+			var datas ={'data': [name,type]};
+			$.post('/touch/open',datas,function(data){
+				$('#editor').text(data);
 			});
 
-
+			});
+		$("#editor-Finish").click(function(){
+			var content = $('#editor').val();
+			var name = $('#doc-name').val();
+			var type = $('#doc-type').val();
+			var datas ={'data': [name,type,content]};
+			$.post('/touch/finish',datas)
+			});
+		$("#editor-Leave").click(function(){
+			$("#display").hide()
+			$("#display").fadeIn(500).load("/welcome");
+			
+			});
 
 	</script>
 	<script type="text/javascript">
-		
+		/*----------------------- Tab Enable --------------------------*/
 		var textareas = document.getElementsByTagName('textarea');
 		var count = textareas.length;
 		for(var i=0;i<count;i++){

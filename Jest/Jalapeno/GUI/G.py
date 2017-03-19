@@ -1,13 +1,13 @@
 from flask import Flask,render_template,url_for,redirect
 import os
-print("Jalo is here",os.getcwd())
+
 import Jalapeno.core
 import Jalapeno.lib
 from Jalapeno.path import APP_DIR
 from Jalapeno.Globalvar import *
 # this module running under GUI process, so other same level process cannot get started
 from multiprocessing import Process
-from Jalapeno.core import app,freezer
+# from Jalapeno.core import app,freezer
 from Jalapeno.Globalvar import events,Event
 import os
 from sys import exit
