@@ -48,6 +48,9 @@ class Mgr(object):
                                 if hold:return hold 
                         elif relative:
                                 dirs[k]=dirs[k].split(tar+os.sep,1)[-1]
+                                #??????????????for Windows
+                                if '\\' in dirs[k]:
+                                     dirs[k]=dirs[k].replace('\\','/')   
                         else:
                                 pass
                                 #relative = dirs[k].split(target+os.sep,1)[-1]
