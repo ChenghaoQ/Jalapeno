@@ -35,17 +35,36 @@ def file_open():
 		print('Target Folder does not exist')
 		return 'Target Folder does not exist'
 
+@touch.route('/touch/save',methods =['GET','POST'])
+def file_save():
+	doc_name,doc_content= request.form.getlist("data[]", type=str)
+	doc_path = SITES_PAGE_FOLDER+'Draft'+os.sep+doc_name+'.dft'
+	try:
+		f = open(doc_path,'w')
+		f.write(doc_content)
+		f.close()
+		print('success')
+		return 'success'
+	except FileNotFoundError:
+		print('Target Folder does not exist')
+		return 'Target Folder does not exist'
+
+
+
+
 
 @touch.route('/touch/finish',methods =['GET','POST'])
 def file_finish():
 	# doc_name,doc_folder,doc_content = request.get_data().decode()
 	doc_name,doc_folder,doc_content= request.form.getlist("data[]", type=str)
 	doc_path = SITES_PAGE_FOLDER+doc_folder+os.sep+doc_name+'.md'
+	draft_path = SITES_PAGE_FOLDER+'Draft'+os.sep+doc_name+'.dft'
 	print(doc_path)
 	try:
 		f = open(doc_path,'w')
 		f.write(doc_content)
 		f.close()
+		os.remove(draft_path)
 		print('success')
 		return 'success'
 	except FileNotFoundError:

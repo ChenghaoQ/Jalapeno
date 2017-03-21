@@ -212,10 +212,10 @@
 	<script type="text/javascript">
 		
 		$("#editor-Save").click(function(){
-			var datas = $('#editor').val();
+			var content = $('#editor').val();
 			var name = $('#doc-name').val();
-			var type = $('#doc-type').val();
-
+			var datas ={'data': [name,content]};
+			$.post('/touch/open',datas)
 			});
 		$("#editor-Open").click(function(){
 			var name = $('#doc-name').val();

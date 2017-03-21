@@ -24,7 +24,7 @@ class Site():
 			os.mkdir(sitefolder)
 
 			os.mkdir(sitefolder+os.sep+'Pages')
-
+			os.mkdir(sitefolder+os.sep+'Pages'+os.sep+'Draft')
 			os.mkdir(sitefolder+os.sep+'build')
 
 			os.mkdir(sitefolder+os.sep+'source')
