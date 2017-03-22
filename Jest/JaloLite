@@ -9,16 +9,15 @@ from Jalapeno.Globalvar import events,Event,engine
 from sys import exit
 import time
 from Jalapeno import *
-from Jalapeno.GUI.Gutils.QtChrome import Browse
+from Jalapeno.GUI.Gutils.QtBrowser
 
-events['QtBrowse']= Event('QtChrome','Proc',Browse)
 
 def main():
 	
 	try:
 
 		engine.Listen(event=events['GUI'])
-		engine.Listen(event=events['QtBrowse'])
+		engine.Listen(event=events['Browse'])
 		engine.Start()
 
 		

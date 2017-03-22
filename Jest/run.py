@@ -1,4 +1,5 @@
-from Jalapeno import flk
+import Jalapeno.core
+		
 
 if __name__ =='__main__':
-	flk.run(debug = True,port = 9999)
+	Jalapeno.core.app.run(host='0.0.0.0',debug = True,port = 9999)

@@ -16,19 +16,23 @@ class MainWindow(QMainWindow):
 
         # 设置浏览器
         self.browser = QWebEngineView()
-        url = 'https://127.0.0.1:5588'
+        # url = 'https://127.0.0.1:5588'
+        url = 'http://0.0.0.0:9999'
         # 指定打开界面的 URL
         self.browser.setUrl(QUrl(url))
          # 添加浏览器到窗口中
         self.setCentralWidget(self.browser)
 
 # 创建应用
-app = QApplication(sys.argv)
-# 创建主窗口
-window = MainWindow()
+
 # 显示窗口
 
 def Browse(listener):
+    app = QApplication(sys.argv)
+# 创建主窗口
+    window = MainWindow()
     window.show()
     # 运行应用，并监听事件
     app.exec_()
+
+Browse('a')
