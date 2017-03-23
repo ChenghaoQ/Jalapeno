@@ -13,9 +13,9 @@ def Browse(listener):
             # 设置窗口标题
             self.setWindowTitle('My Browser')
             # 设置窗口图标
-            self.setWindowIcon(QIcon('icons/penguin.png'))
+            #self.setWindowIcon(QIcon('icons/penguin.png'))
             self.resize(1024,768)
-            self.showFullScreen() 
+            #self.showFullScreen() 
             self.show()
 
             # 设置浏览器
