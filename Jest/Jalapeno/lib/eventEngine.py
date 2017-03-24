@@ -17,7 +17,7 @@ class eventEngine():
 
 	def __Run(self):
 		while self.__active:
-			print('Engine is ALive...\b')
+			print('Engine is ALive...\b',self.__procs)
 			try:
 				command = self.__commander.get(block=True,timeout=1)
 				if command == 'Stop':
