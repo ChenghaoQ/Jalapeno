@@ -1,5 +1,5 @@
 from queue import Empty
-from multiprocessing import Process,Queue
+from multiprocessing import Process,Queue,freeze_support
 from threading import Thread
 
 class eventEngine():
@@ -12,7 +12,7 @@ class eventEngine():
 		self.__active = False
 		self.__threads = {}
 		self.__procs = {}
-		self.test = []
+		self.proc_freezer = freeze_support
 		# self.__handlers = {}
 
 	def __Run(self):

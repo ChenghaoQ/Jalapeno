@@ -11,11 +11,11 @@ events = {}
 class browser_starter():
 	def __init__(self,website):
 		self.website = website
-	def __call__(self):
+	def __call__(self,listener):
 		webbrowser.open(self.website)
 
 
 
 
 
-events['Browse']=Event('Browse','Thread',browser_starter('http://127.0.0.1:5588/redirect'))
+events['Browse']=Event('Browse','Proc',browser_starter('http://127.0.0.1:5588/redirect'))

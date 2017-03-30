@@ -3,7 +3,7 @@ from Jalapeno.lib.fileMgr import Mgr
 import os
 from Jalapeno.utils.config import config
 from Jalapeno.lib.other import *
-
+from Jalapeno.views import *
 
 
 views = config['views']

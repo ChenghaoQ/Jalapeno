@@ -9,7 +9,7 @@ from Jalapeno.Globalvar import events,Event,engine
 from sys import exit
 import time
 from Jalapeno import *
-from Jalapeno.GUI.Gutils.QtBrowser
+
 
 
 def main():
@@ -25,6 +25,7 @@ def main():
 		pass
 	
 if __name__ =='__main__':
+	engine.proc_freezer()
 	main()
 
 	

@@ -4,7 +4,7 @@ block_cipher = None
 
 added_files=[('Jalapeno_data','Jalapeno_data'),('Jalapeno','Jalapeno')]
 a = Analysis(['Jalo'],
-             pathex=['/home/Jkob/Jest2'],
+             pathex=['/home/Jkob/Jest'],
              binaries=[],
              datas=added_files,
              hiddenimports=[],

@@ -9,9 +9,9 @@ from Jalapeno.Globalvar import events,Event,engine
 from sys import exit
 import time
 from Jalapeno import *
-from Jalapeno.GUI.Gutils.Chrome import Browse
+from Jalapeno.GUI.Gutils.QtChrome import Browse
 
-events['Browse']= Event('Chrome','Proc',Browse)
+events['Browse']= Event('QtChrome','Proc',Browse)
 
 def main():
 	

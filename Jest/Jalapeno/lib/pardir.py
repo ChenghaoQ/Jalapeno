@@ -5,11 +5,11 @@ def par_dir():
 
 
 def no_dot(path):
-	path=path.split('/')
+	path=path.split(os.sep)
 	newpath=[]
 	for each in path:
 		if each =='..':
 			newpath=newpath[:-1]
 		else:
 			newpath.append(each)
-	return '/'.join(newpath)
+	return os.sep.join(newpath)

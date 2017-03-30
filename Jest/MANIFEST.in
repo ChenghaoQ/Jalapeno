@@ -1,4 +1,2 @@
-recursive-include Jalapeno/theme *
-recursive-include Jalapeno/Sites *
 recursive-include Jalapeno/GUI *
 recursive-include Jalapeno/../Jalapeno_data *

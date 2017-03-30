@@ -5,7 +5,7 @@ Summary: Static Site Generator based on Flask
 Home-page: https://github.com/ChenghaoQ/Jalapeno
 Author: Chenghao Qian
 Author-email: qch.jacob.jm@gmail.com
-License: GPL
+License: LGPL
 Description: UNKNOWN
 Keywords: Flask,Blog,site Generator,static site
 Platform: UNKNOWN
