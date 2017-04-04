@@ -20,7 +20,7 @@ class eventEngine():
 
 	def __Run(self):
 		while self.__active:
-			print('Engine is ALive...\b',self.__procs)
+			print('Engine is ALive...\b',self.__procs,self.__subproc)
 			try:
 				command = self.__commander.get(block=True,timeout=1)
 				if command == 'Stop':
@@ -48,9 +48,10 @@ class eventEngine():
 			self.__threads[event.name].join()
 			del self.__threads[event.name]
 		elif event.type_ == "SubProc":
-			starter = subprocess.Popen([sys.executable,event.func])
+			starter = subprocess.Popen([each for each in event.func],stderr=subprocess.PIPE,stdout=subprocess.PIPE,stdin=subprocess.PIPE)
 			self.__subproc[event.name] = starter
-
+			out = starter.communicate()
+			print(out)
 
 		# if event.type_ in self.handlers:
 		# 	for handlers in self.__handlers[event.type_]:

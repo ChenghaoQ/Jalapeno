@@ -3,8 +3,8 @@
 block_cipher = None
 
 added_files=[('Jalapeno_data','Jalapeno_data'),('Jalapeno','Jalapeno')]
-a = Analysis(['Jalo'],
-             pathex=['/home/Jkob/Dev'],
+a = Analysis(['JaloLite'],
+             pathex=['/home/Jkob/JaloLite'],
              binaries=[],
              datas=added_files,
              hiddenimports=[],
