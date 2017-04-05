@@ -59,7 +59,7 @@ def freeze():
 	return redirect(url_for('home'))
 	
 
-@gui.route('/shortcut')
+@gui.route('/shortcut',methods=['GET','POST'])
 def shortcut():
 	Jalapeno.lib.shortcuts.create_shortcuts()
 	return redirect(url_for('home'))

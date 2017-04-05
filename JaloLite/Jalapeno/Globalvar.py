@@ -21,7 +21,7 @@ class browser_starter():
 
 print(os.getcwd(),'----------------')
 
-events['WebBrowse']=Event('Browse','SubProc',['open',"http://127.0.0.1:5588/redirect"])
+events['WebBrowse']=Event('Browse','SubProc',['open',"http://127.0.0.1:5588"])
 #events['WebBrowse']=Event('Browse','SubProc',"Jalapeno/GUI/Gutils/weblite.py")
 #events['WebBrowse']=Event('Browse','Proc',browser_starter('http://127.0.0.1:5588/redirect'))
 #events['Browse']=Event('Browse','SubProc',"Jalapeno/GUI/Gutils/Chrome.py")

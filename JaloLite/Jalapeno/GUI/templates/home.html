@@ -39,7 +39,7 @@
 				<li id='Stop'><a href="#">Stop</a></li>
 				<li id='Freeze'><a href="#">Freeze</a></li>
 				<li id='Site'><a href="#">Sites</a></li>
-				<li id='card'><a href="#">Shortcuts</a></li>
+				<li id='Shortcuts'><a href="#">Shortcuts</a></li>
 				<li id='Exit'><a href="#">Exit</a></li>
 			</ul>
 			<button id="sidebar-trigger">➤</button>
@@ -80,6 +80,14 @@
 				
 				setTimeout(function(){$("#display").load("/run/preview");},500);
 				});
+			$("#Shortcuts").click(function(){
+				  $.post("/shortcut");
+				  alert("'Jalo' created under user home")
+				});
+
+
+
+
 			$("#Stop").click(function(){
 				  $.post("/run/stop");
 				  $("#Preview").slideUp(300);

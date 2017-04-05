@@ -2,11 +2,11 @@
 
 block_cipher = None
 
-added_files=[('Jalapeno_data','Jalapeno_data'),('Jalapeno','Jalapeno')]
+
 a = Analysis(['JaloLite'],
              pathex=['/Users/Jakob/JaloLite'],
              binaries=[],
-             datas=added_files,
+             datas=[('Jalapeno_data','Jalapeno_data'),('Jalapeno','Jalapeno')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -18,15 +18,20 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
+          exclude_binaries=True,
           name='JaloLite',
           debug=False,
           strip=False,
           upx=True,
           console=False , icon='Jalo.icns')
-app = BUNDLE(exe,
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               name='JaloLite')
+app = BUNDLE(coll,
              name='JaloLite.app',
              icon='Jalo.icns',
              bundle_identifier=None)

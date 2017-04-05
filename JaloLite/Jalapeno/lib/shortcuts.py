@@ -6,7 +6,7 @@ from Jalapeno.path import APP_DIR
         Help user get a shortcut at user's home dir
 '''
 subdir = ['Sites']
-source = APP_DIR+os.sep+'Jalapeno'
+source = APP_DIR+os.sep+'Jalapeno_data'
 home = os.path.expanduser("~")
 base = home+os.sep+'Jalo'
 
@@ -20,7 +20,7 @@ def create_shortcuts():
 	# 	os.makedirs(base)
 
 	#subdir = ['pages','build','Profile']
-	
+
 	for each in subdir:
 		try:
 			dir_source = source+os.sep+each
