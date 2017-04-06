@@ -11,12 +11,8 @@ class Browse():
         import sys,os
         import json
 
-        print('chr',sys.argv)
-        print('cef.__version__',cef.__version__)
         sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
-        cef.Initialize(settings=dict(debug = True,
-                        log_file='/Users/Jakob/ENV/test2/debug'+os.sep+"debug.log",
-                        log_severity=cef.LOGSEVERITY_WARNING))
+        cef.Initialize()
         cef.CreateBrowserSync(url="http://127.0.0.1:5588")
         cef.MessageLoop()
         cef.Shutdown()
@@ -26,9 +22,3 @@ class Browse():
 
 
 Browse()()
-
-#from multiprocessing import Process
-#import subprocess
-#def test():
-#	
-	

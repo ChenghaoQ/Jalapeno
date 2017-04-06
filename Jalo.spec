@@ -32,7 +32,7 @@ coll = COLLECT(exe,
                upx=True,
                name='Jalo')
 app = BUNDLE(coll,
-             name='Jalo.app',
+             name='Jalapeno.app',
              icon='Jalo.icns',
              bundle_identifier=None,
              info_plist=dict(LSUIElement=True,
