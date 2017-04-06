@@ -50,8 +50,6 @@ class eventEngine():
 		elif event.type_ == "SubProc":
 			starter = subprocess.Popen([each for each in event.func],stderr=subprocess.PIPE,stdout=subprocess.PIPE,stdin=subprocess.PIPE)
 			self.__subproc[event.name] = starter
-			out = starter.communicate()
-			print(out)
 
 		# if event.type_ in self.handlers:
 		# 	for handlers in self.__handlers[event.type_]:
