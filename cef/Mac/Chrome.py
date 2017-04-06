@@ -17,7 +17,7 @@ class Browse():
         cef.Initialize(settings=dict(debug = True,
                         log_file='/Users/Jakob/ENV/test2/debug'+os.sep+"debug.log",
                         log_severity=cef.LOGSEVERITY_WARNING))
-        cef.CreateBrowserSync(url="https://www.google.com")
+        cef.CreateBrowserSync(url="http://127.0.0.1:5588")
         cef.MessageLoop()
         cef.Shutdown()
 

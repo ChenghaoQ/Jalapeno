@@ -1,8 +1,10 @@
 # -*- mode: python -*-
 
 block_cipher = None
-a = Analysis(['JaloLite'],
-             pathex=['/Users/Jakob/JaloLite'],
+
+
+a = Analysis(['Jalo'],
+             pathex=['/Users/Jakob/Ja'],
              binaries=[],
              datas=[('Jalapeno_data','Jalapeno_data'),('Jalapeno','Jalapeno')],
              hiddenimports=[],
@@ -17,7 +19,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='JaloLite',
+          name='Jalo',
           debug=False,
           strip=False,
           upx=True,
@@ -28,9 +30,9 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='JaloLite')
+               name='Jalo')
 app = BUNDLE(coll,
-             name='JaloLite.app',
+             name='Jalo.app',
              icon='Jalo.icns',
              bundle_identifier=None,
              info_plist=dict(LSUIElement=True,
